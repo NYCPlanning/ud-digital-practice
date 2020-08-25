@@ -1,4 +1,3 @@
-
 ## Development Workflow
 
 Run a local development server: from the `site-src` directory, `npx gatsby develop`.
