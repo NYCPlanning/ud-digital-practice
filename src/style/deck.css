@@ -23,7 +23,6 @@ html, body, #___gatsby, #gatsby-focus-wrapper {
 /* TYPE – USING MINOR THIRD SCALE */
 
 #slide-frame {
-  font-size: 1.6em;
   background: #8a8982;
 }
 
@@ -51,11 +50,9 @@ h5 {
   font-size: 1.2em;
 }
 
-.small {
-  font-size: 0.822em;
-}
+/* one size in hierarchy missing between p and small */
 
-.tiny {
+small {
   font-size: 0.694em;
 }
 

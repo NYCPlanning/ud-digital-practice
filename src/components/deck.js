@@ -79,16 +79,16 @@ class Deck extends React.Component {
     const aspectPreviewClass = aspectPreview ? 'border-2 border-black' : ''; 
 
     return (
-      <div id='deck-root' className='flex justify-center items-center h-full w-full'>
+      <div id='deck-root' className='flex justify-center items-center h-full w-full xl:text-3xl lg:text-lg md:text-base sm:text-xs'>
         <Helmet>
           {frontmatter.title && <title>{frontmatter.title}</title>}
         </Helmet>
         <div id='header'>
-          <div className='small fixed top-0 left-0 m-2'>{frontmatter.title}</div>
-          <div className='small fixed top-0 right-0 m-2'>{dateTime}</div>
-          <div className='small fixed bottom-0 right-0 m-2'>{currentSlide}/{slides.length}</div>
+          <small className='small fixed top-0 left-0 m-2'>{frontmatter.title}</small>
+          <small className='small fixed top-0 right-0 m-2'>{dateTime}</small>
+          <small className='small fixed bottom-0 right-0 m-2'>{currentSlide}/{slides.length}</small>
         </div>
-        <div id='slide-frame' className='w-full h-full p-24 flex items-center justify-center'>
+        <div id='slide-frame' className='w-full h-full xl:p-32 sm:p-4 flex items-center justify-center'>
           <div className={`aspect-16-9 ${aspectPreviewClass}`}>
             <div className='aspect-content'>
               {slideMarkup}

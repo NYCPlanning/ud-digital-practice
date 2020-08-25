@@ -1,7 +1,7 @@
 
 ## Development Workflow
 
-Run a local development server: from the `site-src` directory, `npx gatsby develop`.
+Run a local development server: from the `site-src` directory, `npx gatsby develop`. If you'd like the site to be available on your LAN, add `-H 0.0.0.0` to the command.
 
 Deploy to GitHub pages: from the `site-src` directory, run `npm run deploy`. 
 
