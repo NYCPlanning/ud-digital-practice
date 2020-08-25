@@ -1,7 +1,9 @@
 import React from 'react';
+import { Swipeable } from 'react-swipeable';
 import { format } from 'date-fns';
 import { Helmet } from 'react-helmet';
 import Slide from './slide';
+import SwipeControls from './swipeControls';
 
 const dateFormatted = () => format(new Date(), 'MM/dd/yyyy hh:mm');
 
@@ -13,6 +15,22 @@ class Deck extends React.Component {
       currentSlide: 1,
       aspectPreview: false,
     };
+  }
+
+  handleClick = (e) => {
+    //this.advance(1);
+  }
+
+  handleSwipe = (e) => {
+    console.log(e)
+    switch(e.dir) {
+      case 'Left':
+      case 'Up':
+        this.advance(-1);
+        break;
+      default:
+        break;
+    }
   }
 
   handleKeyDown = (e) => {
@@ -63,15 +81,21 @@ class Deck extends React.Component {
 
     // register event listeners
     document.addEventListener('keydown', this.handleKeyDown);
+    document.addEventListener('click', this.handleClick);
   }
 
   componentWillUnmount() {
     document.removeEventListener('keydown', this.handleKeyDown);
+    document.removeEventListener('click', this.handleClick);
   }
 
   render() {
     const { dateTime, currentSlide, aspectPreview } = this.state;
     const { slides, _frontmatter: frontmatter } = this.props;
+
+    const config = {
+      trackTouch: true
+    }
 
     const slideMarkup = slides.map((slide, i) => 
       <Slide key={i} pageNum={i + 1} current={currentSlide} slide={slide}/>
@@ -95,6 +119,7 @@ class Deck extends React.Component {
             </div>
           </div>
         </div>
+        <SwipeControls advance={this.advance}/>
       </div>
     )
   }
