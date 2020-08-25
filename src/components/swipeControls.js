@@ -24,7 +24,7 @@ const SwipeControls = ({ advance }) => {
   });
 
   return (
-    <div className='fixed w-48 h-16 bg-gray-200 bottom-0' id='swipecontrols' {...handlers}/>
+    <div className='xl:invisible lg:invisible fixed w-48 h-8 border-solid border-2 border-b-0 border-black bottom-0' id='swipecontrols' {...handlers}/>
   );
 };
 
