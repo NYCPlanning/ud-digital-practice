@@ -76,7 +76,7 @@ class Deck extends React.Component {
     const slideMarkup = slides.map((slide, i) => 
       <Slide key={i} pageNum={i + 1} current={currentSlide} slide={slide}/>
     );
-    const aspectPreviewClass = aspectPreview ? 'border-2 border-red-400' : ''; 
+    const aspectPreviewClass = aspectPreview ? 'border-2 border-black' : ''; 
 
     return (
       <div id='deck-root' className='flex justify-center items-center h-full w-full'>
@@ -88,7 +88,7 @@ class Deck extends React.Component {
           <div className='small fixed top-0 right-0 m-2'>{dateTime}</div>
           <div className='small fixed bottom-0 right-0 m-2'>{currentSlide}/{slides.length}</div>
         </div>
-        <div id='slideFrame' className='w-full h-full p-8 flex items-center justify-center'>
+        <div id='slide-frame' className='w-full h-full p-24 flex items-center justify-center'>
           <div className={`aspect-16-9 ${aspectPreviewClass}`}>
             <div className='aspect-content'>
               {slideMarkup}
