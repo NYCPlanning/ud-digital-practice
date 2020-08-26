@@ -72,7 +72,6 @@ exports.createPages = async ({ graphql, actions, reporter, pathPrefix }) => {
               title
               date
               desc
-              slug
             }
           }
         }
