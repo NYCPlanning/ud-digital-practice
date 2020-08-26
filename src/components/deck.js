@@ -107,10 +107,16 @@ class Deck extends React.Component {
         <Helmet>
           {frontmatter.title && <title>{frontmatter.title}</title>}
         </Helmet>
+        <div className='gradient-bg'/>
         <div id='header'>
-          <small className='small fixed top-0 left-0 m-2'>{frontmatter.title}</small>
-          <small className='small fixed top-0 right-0 m-2'>{dateTime}</small>
+          <small className='small fixed top-0 left-0 m-2 text-white'>{frontmatter.title}</small>
+          <small className='small fixed top-0 right-0 m-2 text-white'>{dateTime}</small>
           <small className='small fixed bottom-0 right-0 m-2'>{currentSlide}/{slides.length}</small>
+          <div className="fixed bottom-0 left-0 m-4">
+            <a href="https://www1.nyc.gov/site/planning/index.page" title="DCP">
+              <img className="w-16" src="https://raw.githubusercontent.com/NYCPlanning/dcp-logo/master/dcp_logo.svg" alt="DCP"/>
+            </a>
+          </div>
         </div>
         <div id='slide-frame' className='w-full h-full xl:p-32 sm:p-4 flex items-center justify-center'>
           <div className={`aspect-16-9 ${aspectPreviewClass}`}>
