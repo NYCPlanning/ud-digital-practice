@@ -37,6 +37,12 @@ module.exports = {
         gatsbyRemarkPlugins: [
           `gatsby-remark-unwrap-images`,
           {
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              ignoreFileExtensions: ['jpg', 'png'],
+            }
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 800,
