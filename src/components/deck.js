@@ -111,8 +111,8 @@ class Deck extends React.Component {
         <div id='header'>
           <small className='small fixed top-0 left-0 m-2 text-white'>{frontmatter.title}</small>
           <small className='small fixed top-0 right-0 m-2 text-white'>{dateTime}</small>
-          <small className='small fixed bottom-0 right-0 m-2'>{currentSlide}/{slides.length}</small>
-          <div className="fixed bottom-0 left-0 m-4">
+          <small className='small fixed bottom-0 right-0 m-2 z-50'>{currentSlide}/{slides.length}</small>
+          <div className="fixed bottom-0 left-0 m-4 z-50">
             <a href="https://www1.nyc.gov/site/planning/index.page" title="DCP">
               <img className="w-16" src="https://raw.githubusercontent.com/NYCPlanning/dcp-logo/master/dcp_logo.svg" alt="DCP"/>
             </a>

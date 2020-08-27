@@ -89,3 +89,9 @@ ul {
   box-shadow: none;
   backround: none;
 }
+
+/* CANVAS */
+
+canvas:focus {
+  outline: none;
+}
