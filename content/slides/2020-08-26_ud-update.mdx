@@ -8,6 +8,7 @@ desc: summary of slide content
 import ImageRight from '../../src/layouts/slides/imageRight';
 import ImageAbove from '../../src/layouts/slides/imageAbove';
 import Centered from '../../src/layouts/slides/centered';
+import ThreeViewer from '../../src/components/threeViewer';
 
 <!-- END IMPORTS, BEGIN FIRST SLIDE -->
 
@@ -17,19 +18,66 @@ Update → Central UD Team
 
 ---
 
-## What is the Digital Practice Initiative?
+<ImageRight>
 
-Aims to enhance the work of the Urban Design Office, and the agency as a whole, through the use of computational design **tools** & **data**.
+## Goals
+
+The Digital Practice Initiative aims to amplify and enhance the work of the Urban Design Office, through the use of computational design **tools** & **data**.
 
 - Expedite time-consuming modeling and analysis workflows
 - Enhance contextual awareness to guide decision-making
 - Increase transparency and engage the public
+
+</ImageRight>
 
 <!-- Tools: 3D modeling, gis/spatial data and frontend web technologies -->
 
 ---
 
 ![Background Timeline](../assets/timeline-background.svg)
+
+---
+
+<ImageRight>
+
+**NYC 3D Model**
+
+~60 Rhino files by Community District
+
+✅ Multiple datasets in a single source   
+✅ Public impact through OpenData release  
+❌ Hard to produce  
+❌ Hard to update  
+❌ Large files discourage casual use  
+
+![3D Model of NYC screenshot](../assets/nyc-3d-model.png)
+
+</ImageRight>
+
+---
+
+<ImageRight>
+
+**NYC Digital Twin**
+
+Provided as a live database service, not files
+
+- Virtual replica of the real-world city
+- Versioned data from specific sources
+- Easy to update
+- Access for Rhino, GIS, data science + web tools
+
+![Digital Twin Layers](../assets/digital-twin-layers.png)
+
+</ImageRight>
+
+---
+
+<Centered>
+
+![stakeholders in the public realm](../assets/mas_public-space-key-agencies.png)
+
+</Centered>
 
 ---
 
@@ -51,19 +99,30 @@ Aims to enhance the work of the Urban Design Office, and the agency as a whole, 
 
 <ImageRight>
 
-**NYC 3D Model**
+**UDTools**
 
-Downloadable Rhino files of each NYC Community District. Combines 3D building dataset from DOITT and 2D map data from other city sources, like sidewalks, parks, subway entrances.
+- Rhino plugin, builds on existing functions
+- Fetch models from NYC Digital Twin
+- Provides basic BIM-like handling of defined terms: Zoning Lot, Floor, Scenario etc.
+- Evaluate zoning for different real-world sites
+- Generate RWCDS massings
+- Calculate development metrics (floor area/parking/unit counts)
 
-✅ Convenient 3D view of the city  
-✅ Released publicly through OpenData  
-❌ Hard to produce  
-❌ Hard to update  
-❌ Large files discourage casual use  
-
-![3D Model of NYC screenshot](../assets/nyc-3d-model.png)
+![Screenshot of UDTools](../assets/udtools.png)
 
 </ImageRight>
+
+---
+
+<Centered>
+<iframe src="https://player.vimeo.com/video/438591158" width="640" height="397" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</Centered>
+
+---
+
+<Centered>
+<iframe src="https://player.vimeo.com/video/421580130" width="640" height="380" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</Centered>
 
 ---
 
@@ -97,11 +156,7 @@ Spatial Data Analysis: Roof Shapes for MOS
 
 ---
 
-<Centered>
-
-![stakeholders in the public realm](../assets/mas_public-space-key-agencies.png)
-
-</Centered>
+![Stakeholder Diagram](../assets/stakeholders.svg)
 
 ---
 
@@ -109,4 +164,7 @@ Spatial Data Analysis: Roof Shapes for MOS
 
 ---
 
-![Stakeholder Diagram](../assets/stakeholders.svg)
+
+---
+
+<ThreeViewer />
