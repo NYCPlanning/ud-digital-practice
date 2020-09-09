@@ -1,10 +1,10 @@
 module.exports = {
   pathPrefix: "/gis-for-design-2020",
   siteMetadata: {
-    title: `Page Title`,
+    title: `Digital Practice Initiative`,
     name: `Author`,
     description: `Brief description of your site`,
-    author: `@carstoid`,
+    author: `Urban Design Office`,
     date: `2020-08-00`,
   },
   plugins: [

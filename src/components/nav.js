@@ -1,18 +1,25 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-const Header = ({ siteMetadata }) => {
-  const { title } = siteMetadata
+const Nav = () => (
+  <div id='nav-column' className='flex flex-col'>
+    <h2>UDTools for Rhino</h2>
+    <Link to='/plugin/about'>About</Link>
+    <Link to='/plugin/install'>Install</Link>
+    <Link to='/plugin/guide'>Guide</Link>
 
-  return (
-    <div className='flex flex-col'>
-      <h1>{title}</h1>
-      <p>---</p>
+    <h2>NYC Digital Twin</h2>
+    <Link to='/digital-twin/about'>About</Link>
 
-      <Link activeClassName='link-active' to='/'>Inside Link</Link>
-      <a href='https://www.example.com'>Outside Link</a>
-    </div>
-  )
-};
+    <h2>Learning Resources</h2>
+    <Link to='/learning/rhino-basics'>Rhino Basics</Link>
 
-export default Header;
+    <h2>Working With Us</h2>
+    <Link to='/collaborate/rwcds'>RWCDS Model Requirements</Link>
+    <Link to='/collaborate/roles'>Project Roles</Link>
+    <Link to='/collaborate/issues'>Submit an Issue</Link>
+    {/* <Link to='/digital-twin/about'>Skill Share</Link> */}
+  </div>
+)
+
+export default Nav;

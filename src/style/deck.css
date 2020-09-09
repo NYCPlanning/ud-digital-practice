@@ -3,7 +3,7 @@ html, body, #___gatsby, #gatsby-focus-wrapper {
   height: 100vh;
   margin: 0;
   padding: 0;
-  font-size: 1.125em;
+  font-size: 1.0em;
 }
 
 .aspect-16-9 {
@@ -20,51 +20,59 @@ html, body, #___gatsby, #gatsby-focus-wrapper {
   height: 100%;
 }
 
-/* TYPE – USING MINOR THIRD SCALE */
-
-/* #slide-frame {
-
-} */
-
 .gradient-bg {
   position: fixed;
   top: 0;
   left: 0;
   z-index: -1;
-  height: 4em;
+  height: 3em;
   width: 100%;
   background: linear-gradient(rgba(40, 123, 217, 1), rgba(255, 255, 255, 0))
 }
 
-p, ol, ul, h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 1em;
+html {font-size: 100%;} /*16px*/
+
+body {
+  font-weight: 400;
+  line-height: 1.65;
+  color: #333;
+}
+
+p, ul, ol {margin-bottom: 1.15rem;}
+
+h1, h2, h3, h4, h5 {
+  margin: 2.75rem 0 1.05rem;
+  font-weight: bold;
+  line-height: 1.15;
+}
+
+.title {
+  background: white;
+  padding: 0.25em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin-left: -0.5em;
+}
+
+.title a {
+  text-decoration: none;
 }
 
 h1 {
-  font-size: 2.448em;
+  margin-top: 0;
+  margin-bottom: 0.125em;
+  font-size: 2em;
 }
 
-h2 {
-  font-size: 2.074em;
-}
+h2 {font-size: 1.602em;}
 
-h3 {
-  font-size: 1.728em;
-}
+h3 {font-size: 1.424em;}
 
-h4 {
-  font-size: 1.44em;
-}
+h4 {font-size: 1.266em;}
 
-h5 {
-  font-size: 1.2em;
-}
+h5 {font-size: 1.125em;}
 
-/* one size in hierarchy missing between p and small */
-
-small {
-  font-size: 0.694em;
-}
+small, .text_small {font-size: 0.889em;}
 
 ol {
   list-style-type: decimal;
@@ -74,6 +82,18 @@ ol {
 ul {
   list-style-type: circle;
   padding-left: 1em;
+}
+
+a {
+  text-decoration: underline;
+}
+
+#nav-column :nth-child(1) {
+  margin-top: 0em;
+}
+
+#article-column :nth-child(1) {
+  margin-top: 0em;
 }
 
 /* IMAGES */
