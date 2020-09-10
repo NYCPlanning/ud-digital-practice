@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/gis-for-design-2020",
+  pathPrefix: "/ud-digital-practice",
   siteMetadata: {
     title: `Digital Practice Initiative`,
     name: `Author`,
