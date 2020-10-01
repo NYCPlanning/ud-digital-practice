@@ -3,42 +3,84 @@ slug: /plugin/guide
 title: UDTools Guide
 ---
 
-## Import Model
+UDTools extends the functionality of Rhino to handle concepts specific to site development, zoning and urban design. It does this by adding new **commands** to help create and manipulate site models. If you're unfamiliar with using Rhino through commands, take a look at the [Rhino Basics](../learning/rhino-basics) page before proceeding.
 
-Using the map, draw a line around the area you want to import. It can be a single building, a street, or a whole neighborhood. Just be aware a large area will take longer to import than something small.
+It also provides a **Dashboard**, used to preview and manage the data embedded in the model in a more convenient way. The Dashboard runs in your web browser and maintains a connection to Rhino as you work and will stay in sync as your model changes.
 
-In Rhino, run the command `UD_ImportModel` to get all available layers, or `UD_ImportModel2D` for MapPLUTO lots only. The command will take a few moments to run, but when it completes you should see the imported geometry added to your model.
+After you've [installed](./install) UDTools, start Rhino and run `UD_Dashboard` to get started. Position the Dashboard window next to Rhino on your screen so you can see both at the same time.
 
-## Mass Sites
+![Rhino window and Dashboard side-by-side](../../assets/2020/10/document-dashboard.png)
 
-Now you can begin to build out your model.
+## Context
 
-Launch Grasshopper with the `Grasshopper` command in Rhino, and then open the `massing.gh` example which can be found in the release folder under `examples/rwcds`. Once the script loads, you can minimize the Grasshopper window, it is not needed.
+Everything you can do with UDTools relies on a site model, based on the [NYC Digital Twin](../digital-twin/about). Each time you start a new project, UDTools can automatically fetch data from the Digital Twin and use it to build a site model for your project. You only need to do this step once for each project – when you save your Rhino file, the site model data will be included and will be available the next time you open it.
 
-Turn on the Grasshopper remote panel in Rhino. You should see a single green button labeled "Update Massing". Each time you change Sites or Scenarios in the Dashboard, pressing this button will generate a new massing from the provided zoning assumptions and update the preview.
+Using the map in the Dashboard, pan/zoom to your area of interest, then draw a line around the area you want to import.
 
-When you're ready to add the massing to your model, run the command `UD_GenerateMassing` and the massing will automatically be saved to the Rhino file under the appropriate layers.
+Then, in Rhino, run the command `UD_ImportModel`. You'll see options to import the "map only", which will ignore the 3D ground surface and buildings, or to "flatten" which will place the 3D buildings on the ground plane. When making this choice, consider that 3D takes longer to fetch than 2D, and a large area will take longer to import than something small.
 
-At this point you can make further modifications to the massing as needed to fit the Scenario's requirements. You can change the layer of individual floor geometries just as you would any other Rhino object. Altering the geometries or creating new ones on a given site will also add or subtract from the floor area totals you see in the Dashboard. (Updates are made every time you deselect objects in Rhino).
+Click OK. When the command completes you should see the imported geometry added to your model.
 
-If you need to create new layers to denote additional uses, the following naming convention and hierarchy must be observed:
+## Setup
+
+The next thing you'll need to do before you can start building and analyzing specific sites is tell UDTools where they are in space *and* time.
+
+UDTools locates sites by associating them with an existing MapPLUTO tax lot by BBL. To handle time, it uses the concept of a *Scenario*, basically a specific moment in the past, present or future and the rules or assumptions that apply. Scenarios are defined by a label (e.g. Existing, No Action) and a zoning district.
+
+This information is provided using a .CSV table, describing each site with:
+
+- a unique **id** for the site
+- a comma-separated list of tax **lots** by BBL
+- a **zoning** district label for each scenario
+
+Optionally, you can also specify a **group** and a **note**. A template `sites.csv` file is provided with each plugin release and can be edited with Excel, GIS software, or any plain-text editor.
+
+Add sites to your model with the `UD_ImportSites` command, which will ask for the location of the table. UDTools will show a blue boundary around the site's zoning lot if successful.
+
+Optionally, you can also provide overrides to the built-in zoning rules with another table. You'll also find a template `zoning.csv` file in the release folder. When using the built-in rules, you'll need to make sure that the zoning defined for each scenario in your sites table matches one of the currently-supported districts. If you're using overrides, make sure your scenario zoning matches the ID of one of the districts defined in the zoning table.
+
+## Build
+
+Now that you're ready to start building on your sites, you have two options. First, UDTools can help produce models for you. It aims to combine the convenience of a fully-automatic process with the flexibility to make manual adjustments when needed. You can also model completely by hand and use the measurement functions described below as a modeling aid.
+
+Either way, you'll first need to select a specific site and the scenario you want to work on using the Site/Scenario toggles in the Dashboard.
+
+![Rhino window and Dashboard side-by-side](../../assets/2020/10/site-scenario-toggles.png)
+
+A zoning envelope for the selected site can be generated by running `UD_GenerateEnvelope`.
+
+To produce a full building massing, you'll first need to define "Massing Goals" for the site. Input a comma-separated list of floor heights and use groups in the Massing Goals Dashboard panel. The last item in each list will automatically repeat until all available FAR is exhausted. If no FAR is available for a specified use, nothing will be generated.
+
+![Massing Goals panel](../../assets/2020/10/massing-goals.png)  
+
+The Use Group chart from the Zoning Handbook is reproduced here for convenience:
+
+![use group chart](../../assets/2020/10/zh_use-groups.png) 
+
+Then you can run `UD_GenerateMassing` which will add a building massing and envelope to the selected site under the appropriate Scenario layer.
+
+When modeling by hand, you're free to do whatever you want as long as you follow two basic rules. First, only closed polysurfaces with planar faces will be counted for floor area. Second, scenario and use are defined by layer, so be very careful that your model geometry is assigned to the correct layer.
+
+![layer list](../../assets/2020/10/scenario-layers.png) 
+
+If a given scenario doesn't have the full layer hierarchy shown above, you can generate it by running `UD_CheckLayers`.
+
+<!-- If you need to create new layers to denote additional uses, the following naming convention and hierarchy must be observed:
 
 - `MODEL` contains all geometry representing a 'real' physical or legal thing.
   - `BASE` is generated automatically when you run `UD_ImportModel`
   - Scenario layers, `SCN_Scenario_Name` contain all geometry particular to a given scenario. Examples: `SCN_Existing`, `SCN_No-Action`, `SCN_Proposal-2`. `SCN_Existing` and `SCN_No-Action`/`SCN_Without-Action` are special cases that pull floor area data from MapPLUTO instead of the model based on the requirements of the RWCDS analysis.
     - `envelope` contains volumes representing the maximum allowable bulk under the Scenario's zoning.
     - `RESIDENTIAL`, `COMMERCIAL`, `COMMUNITYFACILITY` and `MANUFACTURING` group together sublayers with each specific use
-      - Specific uses are coded as `NN_use-label` where NN is a zero-padded number corresponding with a use code in the ZR and use-label is an arbitrary tag that can be used to track groups of floor area for non-zoning purposes. Examples: `02_condo`, `16_auto-related`, `06_office`, `06_local-retail`
+      - Specific uses are coded as `NN_use-label` where NN is a zero-padded number corresponding with a use code in the ZR and use-label is an arbitrary tag that can be used to track groups of floor area for non-zoning purposes. Examples: `02_condo`, `16_auto-related`, `06_office`, `06_local-retail` -->
 
-Note: by convention, layers in all-caps should never contain geometry.
+## Measure
 
-## Import Assumptions
+Every time the selection changes in Rhino, UDTools will recalculate the development metrics for the selected scenario, and preview them in the Dashboard panel shown below:
 
-When starting a new project, you'll need to tell UDTools which lots in your model should be treated as "sites" for analysis. UDTools contains built-in zoning assumptions for most districts, but you can also provide your own custom zoning definitions that will override the defaults. Both site and zoning assumptions need to be provided as .csv files which can be exported from any Excel workbook.
+![floor area preview](../../assets/2020/10/floorarea-preview.png)  
 
-Follow the [instructions](https://nycplanning.github.io/ud-digital-practice/plugin/what-you-need) on the Digital Practice documentation page to prepare your assumptions. Once they're ready, run `UD_ImportZoning` then `UD_ImportSites` in Rhino and follow the instructions in the prompt.
-
-Once your assumptions have been loaded, you should see the boundaries of each site appear in Rhino, and a list of available sites and scenarios will appear. Clicking on a site, and then a scenario will show a preview of the FAR and floor area totals for that combination, as well as a list of zoning assumptions and site details.
+Here we can see that the selected site is utilizing 14.33 of 15 Commercial FAR available, or a Gross Floor Area of 137,820 sqft. The data shown in the dashboard is just a small subset of what's available from UDTools. You can use the `plugin-data-basic.gh` Grasshopper file provided in the release examples to explore more of what's available, or follow the steps to export a scenario table below.
 
 ## Export
 
