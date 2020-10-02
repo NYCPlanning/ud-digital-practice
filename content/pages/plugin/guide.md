@@ -3,27 +3,31 @@ slug: /plugin/guide
 title: UDTools Guide
 ---
 
-UDTools extends the functionality of Rhino to handle concepts specific to site development, zoning and urban design. It does this by adding new **commands** to help create and manipulate site models. If you're unfamiliar with using Rhino through commands, take a look at the [Rhino Basics](../learning/rhino-basics) page before proceeding.
+UDTools extends Rhino by adding new commands to create and manipulate site models. If you're unfamiliar with Rhino's command interface, take a look at the [Rhino Basics](../learning/rhino-basics) page before proceeding.
 
-It also provides a **Dashboard**, used to preview and manage the data embedded in the model in a more convenient way. The Dashboard runs in your web browser and maintains a connection to Rhino as you work and will stay in sync as your model changes.
+It also provides a "Dashboard", used to preview and manage data embedded in the model in a more convenient way. The Dashboard runs in a web browser, but it maintains a connection to Rhino as you work and will stay in sync as you edit your model.
 
-After you've [installed](./install) UDTools, start Rhino and run `UD_Dashboard` to get started. Position the Dashboard window next to Rhino on your screen so you can see both at the same time.
+After you've [installed](./install) UDTools, start Rhino and run `UD_Dashboard` to get started. Position the Rhino window and the Dashboard side-by-side so you can see both at the same time.
 
 ![Rhino window and Dashboard side-by-side](../../assets/2020/10/document-dashboard.png)
 
 ## Context
 
-Everything you can do with UDTools relies on a site model, based on the [NYC Digital Twin](../digital-twin/about). Each time you start a new project, UDTools can automatically fetch data from the Digital Twin and use it to build a site model for your project. You only need to do this step once for each project – when you save your Rhino file, the site model data will be included and will be available the next time you open it.
+Everything you can do with UDTools relies on a site model, provided by the [NYC Digital Twin](../digital-twin/about). Each time you start a new project, UDTools can help you fetch a model from the Digital Twin and customize it to meet your needs. You'll only need to do this once for each project; when the Rhino file is saved, all site model information will be included and will be available the next time you open it.
 
-Using the map in the Dashboard, pan/zoom to your area of interest, then draw a line around the area you want to import.
+To fetch a site model, first pan/zoom to your area of interest using the map in the Dashboard, then draw a line around the area you want to import.
 
-Then, in Rhino, run the command `UD_ImportModel`. You'll see options to import the "map only", which will ignore the 3D ground surface and buildings, or to "flatten" which will place the 3D buildings on the ground plane. When making this choice, consider that 3D takes longer to fetch than 2D, and a large area will take longer to import than something small.
+Next, in Rhino, run the command `UD_ImportModel`. You'll see options to import the "map only", which will ignore the 3D ground surface and buildings, or to "flatten" which will place the 3D buildings on the ground plane. When making this choice, consider that 3D takes longer to fetch than 2D, and a large area will take longer to import than something small.
 
 Click OK. When the command completes you should see the imported geometry added to your model.
 
+![import model using dashboard and importmodel command](../../assets/2020/10/import-model.gif)
+
 ## Setup
 
-The next thing you'll need to do before you can start building and analyzing specific sites is tell UDTools where they are in space *and* time.
+The next thing you'll need to do before you can start building and analyzing specific sites is tell UDTools where they are in space, what moments in time you're interested in, and what assumptions to make about zoning at each of those moments.
+
+### Defining Multiple Sites With A Table
 
 UDTools locates sites by associating them with an existing MapPLUTO tax lot by BBL. To handle time, it uses the concept of a *Scenario*, basically a specific moment in the past, present or future and the rules or assumptions that apply. Scenarios are defined by a label (e.g. Existing, No Action) and a zoning district.
 
@@ -37,11 +41,29 @@ Optionally, you can also specify a **group** and a **note**. A template `sites.c
 
 Add sites to your model with the `UD_ImportSites` command, which will ask for the location of the table. UDTools will show a blue boundary around the site's zoning lot if successful.
 
+### Defining Zoning Overrides With A Table
+
 Optionally, you can also provide overrides to the built-in zoning rules with another table. You'll also find a template `zoning.csv` file in the release folder. When using the built-in rules, you'll need to make sure that the zoning defined for each scenario in your sites table matches one of the currently-supported districts. If you're using overrides, make sure your scenario zoning matches the ID of one of the districts defined in the zoning table.
+
+### Defining Sites Manually
+
+When you define sites using a table (see above), scenarios are automatically created for you based on the names of the scenario columns. Before defining sites manually, you need to tell UDTools what scenarios you plan to use by running `UD_AddScenario`.
+
+![add scenario using udtools command](../../assets/2020/10/add-scenario.gif)
+
+There are two methods available for adding sites by hand, both of which can be accessed through the `UD_AddSite` command. For both, you'll be prompted for a site ID, which can be any sequence of letters or numbers. Then, for each defined scenario, you'll need to enter a built-in zoning district or the ID of one of the entries in your zoning override table. Finally you'll be asked to pick one of the two available methods for defining the site's Zoning Lot.
+
+The first method uses a collection of tax lots, just like when adding sites from a table. Here, you can click on the tax lot outlines in your site model to define the collection of lots you want to use. 
+
+![add site with custom boundary](../../assets/2020/10/add-site_taxlots.gif)
+
+The second method allows you to use a custom zoning lot boundary drawn directly in Rhino. It needs to be a closed, planar curve but not necessarily a polyline – it can include arcs or curved segments if needed. After selecting the zoning lot outline, you'll be asked to identify which of its segments are to be treated as Front, Side and Rear lot lines. Use Ctrl+Shift+Click to select individual segments from the boundary.
+
+![add site with custom boundary](../../assets/2020/10/add-site_custom.gif)
 
 ## Build
 
-Now that you're ready to start building on your sites, you have two options. First, UDTools can help produce models for you. It aims to combine the convenience of a fully-automatic process with the flexibility to make manual adjustments when needed. You can also model completely by hand and use the measurement functions described below as a modeling aid.
+Now that you're ready to start building on your sites, you have two options. First, UDTools can generate the models "semiautomatically". Here, the process is designed to combine the convenience of a fully-automatic process with the flexibility to make manual adjustments when needed. You can also model completely by hand and use the measurement functions described in the next section as a modeling aid.
 
 Either way, you'll first need to select a specific site and the scenario you want to work on using the Site/Scenario toggles in the Dashboard.
 
