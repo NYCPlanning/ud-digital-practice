@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 const Header = ({ siteMetadata }) => {
   const { title, author } = siteMetadata
   return (
-    <div className='title h-32 self-start'>
+    <div className='title self-start'>
       <Link to='/'><h1>{title}</h1></Link>
       <small>A project of NYC Planning's {author}</small>
     </div>

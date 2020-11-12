@@ -7,16 +7,15 @@ import '../style/main.css';
 
 const Layout = ({ children, siteMetadata }) => {
     return(
-        <div id='root' className="flex flex-col p-8">
-          <div className='gradient-bg' />
-          <Header siteMetadata={siteMetadata} />
-          <div className='flex'>
-            <div className='w-1/3'>
-              <Nav siteMetadata={siteMetadata} />
-            </div>
-            <div id='article-column' className='w-2/3'>
-              {children}
-            </div>
+        <div id='root' className="grid grid-cols-1 md:grid-cols-3 max-w-3xl p-8">
+          <div className='col-start-1 md:col-span-3 mb-8'>
+            <Header siteMetadata={siteMetadata} />
+          </div>
+          <div className='mb-8'>
+            <Nav siteMetadata={siteMetadata} />
+          </div>
+          <div id='article-column' className='md:col-start-2 md:col-span-2'>
+            {children}
           </div>
           <DCPLogo />
         </div>
