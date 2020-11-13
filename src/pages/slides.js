@@ -2,9 +2,11 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 
 const SlideDeckList = ({ data }) => {
+  if (!data) return null;
+
   const { allSitePage: { edges: decks }} = data;
   const sorter = (a, b) => (
-    a.node.context.frontmatter.date > a.node.context.frontmatter.date
+    a.node.context.frontmatter.date > b.node.context.frontmatter.date
   );
   decks.sort(sorter);
 
