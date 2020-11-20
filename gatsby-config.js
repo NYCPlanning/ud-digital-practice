@@ -59,6 +59,19 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-mermaid`,
+            options: {
+              language: 'mermaid',
+              theme: 'base',
+              mermaidOptions: {
+                flowchart: {
+                  useMaxWidth: true,
+                  htmlLabels: false,
+                },
+              },
+            },
+          },
           `gatsby-remark-unwrap-images`,
           {
             resolve: `gatsby-remark-copy-linked-files`,
