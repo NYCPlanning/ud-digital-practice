@@ -11,9 +11,57 @@ After you've [installed](./install) UDTools, start Rhino and run `UD_Dashboard` 
 
 ![Rhino window and Dashboard side-by-side](../../assets/2020/10/document-dashboard.png)
 
+## Process Overview
+
+The diagram below outlines the three major groups of functionality provided by UDTools and the relationships between them.
+
+```mermaid
+graph TD
+  subgraph Context
+    context[Import Site Model]
+    context === importZoning[Define Custom Zoning]
+
+    importZoning === importSites[Batch Import Sites/Scenarios]
+    importZoning --- addScenario[Add Individual Scenarios]
+    addScenario --- addSite[Add Individual Sites]
+  end
+
+  subgraph Massings
+    importSites === setMassingGoals
+    addSite --- setMassingGoals[Set Massing Goals]
+
+    setMassingGoals === generateMassing[Generate Massing]
+    setMassingGoals --- generateEnvelope[Generate/Adjust Envelope]
+    generateEnvelope --- generateMassing
+  end
+
+  subgraph Takeoffs
+    generateMassing ==> exportData
+    generateMassing --- modelWithFeedback[Check/Adjust Massings]
+    modelWithFeedback ---> exportData[Preview Takeoffs and Export]
+  end
+
+  importMassings[Draw/Import Custom Massings] ----> exportData
+```
+
+**Context** is provided by importing a site model, defining any custom zoning overrides, and laying out the specific locations (Sites) and moments in time (Scenarios) you want to use in your model.
+
+Next, UDTools can use the context you provide to generate **Massings** for different development scenarios in the model.
+
+Once you have a complete site model populated by massings, **Takeoffs** reflecting floor area totals, parking requirements, unit counts and other metrics can be calculated and exported for use in other software.
+
+## Big Ideas
+
+Before we get into specifics on how to accomplish each of these steps, there are a few key concepts to understand:
+
+- **Tools vs Methods** – 
+- **Smart Objects** – Rhino, like most CAD software, focuses on the representation of geometric objects and their positions in space. Both [GIS](https://en.wikipedia.org/wiki/Geographic_information_system) and [BIM](https://en.wikipedia.org/wiki/Building_information_modeling) expand on this by allowing geometric objects to carry *attributes* capable of describing non-geometric properties. UDTools gives Rhino the ability to behave more like a GIS or BIM software capable of representing and manipulating "Smart Objects" like Zoning Lots, Districts and Envelopes with geometric shapes, attributes and rule-based behaviors.
+- **Layer Standards** – The main way UDTools interprets your model is by checking where things sit in the layer tree. To avoid problems when drawing new objects, users should be diligent about to placing them on the correct layers.
+- **Overrides** – UDTools tries to be as simple as possible for first-time users; when it's used this way, it makes a lot of assumptions. For more advanced users, it's possible to override the built-in rules to deal with more complicated or nuanced situations. Opportunities to define overrides will be highlighted throughout the UDTools tutorials.
+
 ## Context
 
-Everything you can do with UDTools relies on a site model, provided by the [NYC Digital Twin](../digital-twin/about). Each time you start a new project, UDTools can help you fetch a model from the Digital Twin and customize it to meet your needs. You'll only need to do this once for each project; when the Rhino file is saved, all site model information will be included and will be available the next time you open it.
+Most of the tasks you can accomplish with UDTools rely on a site model, provided by the [NYC Digital Twin](../digital-twin/about). Each time you start a new project, UDTools can help you fetch a model from the Digital Twin and customize it to meet your needs. You'll only need to do this once for each project; when the Rhino file is saved, all site model information will be included and will be available the next time you open it.
 
 To fetch a site model, first pan/zoom to your area of interest using the map in the Dashboard, then draw a line around the area you want to import.
 
