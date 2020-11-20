@@ -123,3 +123,40 @@ ul {
 #article-column :nth-child(1) {
   margin-top: 0em;
 }
+
+/* MERMAID DIAGRAMS */
+
+div .mermaid {
+  position: relative; 
+  height: 0; 
+  width: 100%; 
+  padding: 0;
+  padding-bottom: 100%; 
+  margin-bottom: 1em;
+}
+
+svg[id^='mermaid-']{
+  position: absolute; 
+  height: 100%; 
+  width: 100%; 
+  left: 0; 
+  top: 0;
+}
+
+tspan {
+  font-family: Arial, Helvetica, sans-serif !important;
+  fill: var(--contrast-blue-darker) !important;
+}
+
+.flowchart-link, path {
+  stroke: var(--contrast-blue-darker) !important;
+}
+
+marker {
+  fill: var(--contrast-blue-darker) !important;
+}
+
+.node rect { 
+  fill: white !important;
+  stroke: var(--contrast-blue-darker) !important;
+}
