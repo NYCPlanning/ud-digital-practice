@@ -1,3 +1,8 @@
+---
+slug: learning/udtools-201
+title: Rhino Basics
+---
+
 # UDTools 201: Neighborhood-Scale Modeling & the RWCDS
 
 (Course Description)

@@ -1,3 +1,8 @@
+---
+slug: learning/udtools-grasshopper
+title: Rhino Basics
+---
+
 # Custom Analysis & Environmental Modeling with UDTools and Grasshopper
 
 ### Audience

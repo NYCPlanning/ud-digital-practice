@@ -1,3 +1,8 @@
+---
+slug: learning/intro
+title: Rhino Basics
+---
+
 # Intro to Urban Design Digital Practice: UDTools and the NYC Digital Twin 
  
 Have you heard talk of the “magic machine”, the “miracle box” or the “parametric tool”? This session will demystify the 3D modeling methods used by the Urban Design Office, introduce the tools we’re developing to enable the use of urban-scale models at DCP, and lay the groundwork for two future training sessions covering these tools and methods. 

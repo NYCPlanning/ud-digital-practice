@@ -1,3 +1,8 @@
+---
+slug: learning/udtools-101
+title: Rhino Basics
+---
+
 # UDTools 101: Building-Scale Modeling & Analysis Basics 
  
 (Course Description)
@@ -26,41 +31,42 @@
 
 ## Outline
 
-- Provide an overview of key concepts and recommended practices for urban modeling with UDTools + Rhino 
-- Tour UDTools’ main interface, the Dashboard, and understand how it relates to other available interfaces for advanced users (Rhino commands, Grasshopper access) 
-- Import a site model from the NYC Digital Twin and review the UDTools layer standard 
-- Define Scenarios and Sites, learn how UDTools uses these to structure space and time and evaluate key zoning concepts 
-- Generate a massing for a defined site; understand how development metrics are calculated and previewed 
-- Export data for use in Excel or GIS 
-
-
-- Core concepts
-  - Layer standards
-  - "Smart" geometry – like in GIS and BIM, UDTools enhances otherwise "dumb" shapes in Rhino to be able to store information and answer questions based on *what* they are and how they fit into a *context*
-  - Defaults/overrides – things are simplified by default but complexity/nuance can be expressed by providing additional information
-- (Recap) DPI documentation page
-    - overview of what's there
-    - how-to guide - mention that this is always going to have the most up-to-date
-    - installation guide
-- Installation
-  - prerequisites
+- **Provide an overview of key concepts and recommended practices for urban modeling with UDTools + Rhino**
+  - the NYC Digital Twin
+  - UDTools, extends Rhino to do cool stuff related to urban design and zoning
+    - Connect with the Digital Twin, 
+    - “Understand” zoning and urban design concepts, 
+    - Generate zoning-compliant massings for real-world or hypothetical sites, 
+    - Produce detailed take-offs of key development scenario metrics. 
+  - tools vs methods. not just a "magic tool"
+  - tool ecology  – meant to provide a "kit of parts" that can help solve different problems, rather than just automating a specific task
+  - important concepts
+    - layer standard, like AIA CAD guidelines, used to guarantee models people work on are organized the same way so complex models are readable by other people
+    - "smart geometry" – CAD is just shapes, but BIM and GIS rely on the idea of geometry with attributes (properties) and geometry with "methods" - you can ask them questions and ask them to calculate things about themselves. this allows stuff to happen under the hood
+      - UDTools enhances otherwise "dumb" shapes in Rhino to be able to store information and answer questions based on *what* they are and how they fit into a *context*
+    - defaults/overrides – things are set up to be as simple as possible but you can also provide more detail/nuance when needed, provided you understand some ground rules and how these need to be defined (covered later)
+  - how to install. this is already running on my machine, but here's how you would do it:
+    - prerequisites
     - Rhino 6 running on Mac/PC, either agency desktop or personal computer
-  - From DPI documentation page on installation:
-    - download
-    - unzip
-    - choose correct file for your platform
-    - double-click, rhino will install
-    - note- on windows may need to unblock for windows firewall
-    - look at example files
-- (Recap) dashboard overview
-  - the dashboard is like a "remote control" for rhino, it triggers commands and makes changes to your model, reads it and displays information in a more accessibel way
-  - connection indicator
-  - guide link
-  - report problem link (show how this works)
-  - version indicator, in case you don't have it when communicating about problems
-  - five tabs, organized left-right as you build and modify a model
+    - From DPI documentation page on installation:
+      - download
+      - unzip
+      - choose correct file for your platform
+      - double-click, rhino will install
+      - note- on windows may need to unblock for windows firewall
+      - look at example files
+- **Tour UDTools’ main interface, the Dashboard, and understand how it relates to other available interfaces for advanced users (Rhino commands, Grasshopper access)**
+  - this is the UDTools Dashboard, it's the easiest way to interact with UDTools for most tasks
+  - there are two other ways, using the Rhino command line, and through custom grasshopper components, we'll talk about both in future tutorials
+  - the dashboard is like a "remote control" for rhino, it triggers commands and makes changes to your model, reads it and displays information in a more accessible way. here's what you see:
+    - connection indicator
+    - guide link
+    - report problem link (show how this works)
+    - version indicator, in case you don't have it when communicating about problems
+    - five tabs, organized left-right as you build and modify a model
   - we'll walk through them one-by one as we model a single site
-- CONTEXT
+- CONTEXT **Import a site model from the NYC Digital Twin and review the UDTools layer standard** 
+  - kick off methods/process section. look at diagram/flow chart
   - fetch geometry from the digital twin to give you a site model, base map
   - three options:
     - map only - 2d map things only (no 3d buildings or ground)
@@ -76,7 +82,7 @@
       - 3D - note BIN numbers on buildings
     - meant to be a starting point for modeling not an accurate representation of the physical city
     - the map is not the territory! neither is a 3d model, even if it looks more like the real thing
-- SETUP
+- SETUP **Define Scenarios and Sites, learn how UDTools uses these to structure space and time and evaluate key zoning concepts**
   - next step is to define *sites* and *scenarios* for analysis
   - site - a fixed geographic location (stays the same over time)
   - scenario - a moment in time (conditions, like zoning, change with time)
@@ -99,7 +105,7 @@
         - select front lot lines, side lot lines and rear (explain why, software is able to understand which lot line types to use when you have the context, but can't figure it out when it's an arbitrary geometry)
   - in RWCDS session, will talk about how to define and import sites in bulk
   - will also cover custom zoning overrides
-- BUILD
+- BUILD **Generate a massing for a defined site; understand how development metrics are calculated and previewed** 
   - generate massing for defined sites in the model
   - needs two things, zoning rules (looked up automatically), and massing goals
   - massing goals provided as a list of floor heights and use groups
@@ -130,7 +136,8 @@
   - demo how to solve for bike parking
     - won't be modeled automatically, but you can add on a parking layer to see how it will affect the massing
     - shortcomings will be highlighted in red, once you provide required amount it will go black
-- SUMMARY
+- SUMMARY **Export data for use in Excel or GIS**
+  - as of the 1.5 release this is broken, unfortunately, but we can see the steps to take anyway
   - jsut one site in this demo, but if we had more than one site this would show a list of all sites in the model
   - shows broad use category total, residential unit count
   - excel sheet can be downloaded, needs special scenario names for rwcds
