@@ -1,9 +1,10 @@
 import React from 'react';
-import { Swipeable } from 'react-swipeable';
 import { format } from 'date-fns';
 import { Helmet } from 'react-helmet';
+import { globalHistory } from '@reach/router';
 import Slide from './slide';
 import SwipeControls from './swipeControls';
+import Counter from './counter';
 
 const dateFormatted = () => format(new Date(), 'MM/dd/yyyy hh:mm');
 
@@ -17,12 +18,16 @@ class Deck extends React.Component {
     };
   }
 
+  getLocation = () => {
+    const { hash } = globalHistory.location;
+    return hash;
+  }
+
   handleClick = (e) => {
     //this.advance(1);
   }
 
   handleSwipe = (e) => {
-    console.log(e)
     switch(e.dir) {
       case 'Left':
       case 'Up':
@@ -69,9 +74,17 @@ class Deck extends React.Component {
     this.setState({
       currentSlide: nextSlide
     })
+
+    window.location.hash = nextSlide;
   }
 
   componentDidMount() {
+    // check for slide number and set
+    const hash = this.getLocation().replace('#', '');
+    this.setState({
+      currentSlide: parseInt(hash)
+    })
+
     // auto-advance current time
     setInterval(() => {
       this.setState({
@@ -93,9 +106,9 @@ class Deck extends React.Component {
     const { dateTime, currentSlide, aspectPreview } = this.state;
     const { slides, _frontmatter: frontmatter } = this.props;
 
-    const config = {
-      trackTouch: true
-    }
+    // const config = {
+    //   trackTouch: true
+    // }
 
     const slideMarkup = slides.map((slide, i) => 
       <Slide key={i} pageNum={i + 1} current={currentSlide} slide={slide}/>
@@ -103,32 +116,111 @@ class Deck extends React.Component {
     const aspectPreviewClass = aspectPreview ? 'border-2 border-black' : ''; 
 
     return (
-      <div id='deck-root' className='flex justify-center items-center h-full w-full xl:text-3xl lg:text-lg md:text-base sm:text-xs'>
+      <div id='deck-root' className={`h-full w-full xl:text-3xl lg:text-lg md:text-base sm:text-xs`}>
         <Helmet>
           {frontmatter.title && <title>{frontmatter.title}</title>}
         </Helmet>
-        <div className='gradient-bg'/>
+        {/* <div className='gradient-bg'/> */}
         <div id='header'>
           <small className='small fixed top-0 left-0 m-2 text-white'>{frontmatter.title}</small>
           <small className='small fixed top-0 right-0 m-2 text-white'>{dateTime}</small>
-          <small className='small fixed bottom-0 right-0 m-2 z-50'>{currentSlide}/{slides.length}</small>
+          <Counter text={`${currentSlide}/${slides.length}`} />
           <div className="fixed bottom-0 left-0 m-4 z-50">
             <a href="https://www1.nyc.gov/site/planning/index.page" title="DCP">
               <img className="w-16" src="https://raw.githubusercontent.com/NYCPlanning/dcp-logo/master/dcp_logo.svg" alt="DCP"/>
             </a>
           </div>
         </div>
-        <div id='slide-frame' className='w-full h-full xl:p-32 sm:p-4 flex items-center justify-center'>
+        <div id='slide-frame' className='w-full h-full flex items-center justify-center'>
           <div className={`aspect-16-9 ${aspectPreviewClass}`}>
-            <div className='aspect-content'>
+            <div className='aspect-content p-8'>
               {slideMarkup}
             </div>
           </div>
         </div>
         <SwipeControls advance={this.advance}/>
+        <style global jsx>{`
+          #deck-root {
+            position: fixed;
+            top: 0;
+            left: 0;
+            font-size: 1.5em;
+          }
+
+          p, ul, ol {
+            color: var(--contrast-blue-darkest);
+            list-style-type: disc;
+            margin-bottom: 1.15rem;
+            max-width: 30em;
+          }
+
+          p + ul {
+            margin-bottom: 2em;
+          }
+          
+          h1, h2, h3, h4, h5 {
+            color: var(--contrast-blue-darkest);
+            margin: 2.75rem 0 1.05rem;
+            font-weight: normal;
+            line-height: 1.15;
+          }
+
+          h2, h3, h4, h5 {
+            font-weight: bold;
+          }
+
+          .aspect-16-9 {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+          }
+          
+          .aspect-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+
+          .gatsby-resp-image-wrapper {
+            margin: 0;
+            padding: 0;
+          }
+          
+          .gatsby-resp-image-link {
+            display: block;
+            height: auto;
+            width: auto;
+            background: none;
+          }
+          
+          .gatsby-resp-image-background-image {
+            min-width: 600px;
+            object-fit: contain;
+            box-shadow: none;
+            backround: none;
+          }
+                    
+          canvas:focus {
+            outline: none;
+          }
+        `}</style>
       </div>
     )
   }
 }
 
 export default Deck;
+
+// .gatsby-resp-image-wrapper, .gatsby-resp-image-link {
+//   height: 100%;
+//   width: 100%;
+//   background: none;
+// }
+
+// .gatsby-resp-image-image, .gatsby-resp-image-background-image {
+//   object-fit: contain;
+//   box-shadow: none;
+//   backround: none;
+// }

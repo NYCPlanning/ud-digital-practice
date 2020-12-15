@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Deck from '../components/deck';
 import splitSlides from '../utils/split-slides';
-import '../style/deck.css';
 
 export const pageQuery = graphql`
   query($id: String!) {

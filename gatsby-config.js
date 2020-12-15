@@ -8,27 +8,33 @@ module.exports = {
     date: `2020-08-00`,
   },
   plugins: [
+    `gatsby-plugin-styled-jsx`,
+    `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `gis-2020`,
+        short_name: `gis`,
+        start_url: `/`,
+        icon: `content/assets/favicon.png`, // This path is relative to the root of the site.
+      },
+    },
+    // IMAGES + ASSETS, GENERAL
     `gatsby-plugin-sharp`,
     `gatsby-remark-images`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `slides`,
-        path: `${__dirname}/content/slides/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `pages`,
-        path: `${__dirname}/content/pages/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `assets`,
         path: `${__dirname}/content/assets`,
+      },
+    },
+    // HANDLES SLIDES + LINKED MEDIA THROUGH MDX PLUGIN ETC
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `slides`,
+        path: `${__dirname}/content/slides/`,
       },
     },
     {
@@ -45,14 +51,22 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 800,
               disableBgImage: true,
               disableBgImageOnAlpha: true,
               linkImagesToOriginal: false,
               backgroundColor: 'none',
+              wrapperStyle: `margin: 0; padding: 0;`,
             },
           },
         ],
+      },
+    },
+    // HANDLES PAGES + LINKED MEDIA THROUGH REMARK TRANSFORMER ETC
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/content/pages/`,
       },
     },
     {
@@ -90,15 +104,5 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gis-2020`,
-        short_name: `gis`,
-        start_url: `/`,
-        icon: `content/assets/favicon.png`, // This path is relative to the root of the site.
-      },
-    },
-    `gatsby-plugin-postcss`
   ],
 }
