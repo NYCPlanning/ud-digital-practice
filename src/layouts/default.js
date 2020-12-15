@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Nav from '../components/nav';
 import Header from '../components/header';
 import DCPLogo from '../components/dcpLogo';
-import '../style/main.css';
 
 const Layout = ({ children, siteMetadata }) => {
     return(
@@ -18,6 +17,10 @@ const Layout = ({ children, siteMetadata }) => {
             {children}
           </div>
           <DCPLogo />
+          <style jsx global>{`
+          
+          
+          `}</style>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/ud-digital-practice",
+  pathPrefix: `/ud-digital-practice`,
   siteMetadata: {
     title: `Digital Practice Initiative`,
     name: `Author`,
@@ -16,7 +16,7 @@ module.exports = {
         name: `gis-2020`,
         short_name: `gis`,
         start_url: `/`,
-        icon: `content/assets/favicon.png`, // This path is relative to the root of the site.
+        icon: `${__dirname}/content/assets/favicon.png`, // This path is relative to the root of the site.
       },
     },
     // IMAGES + ASSETS, GENERAL
