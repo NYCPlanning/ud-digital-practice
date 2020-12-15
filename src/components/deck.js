@@ -19,7 +19,13 @@ class Deck extends React.Component {
   }
 
   getLocation = () => {
-    const { hash } = globalHistory.location;
+    let { hash } = globalHistory.location;
+    
+    if (hash.length < 1) {
+      hash = '#1';
+      window.location.hash = 1;
+    }
+
     return hash;
   }
 
@@ -81,6 +87,7 @@ class Deck extends React.Component {
   componentDidMount() {
     // check for slide number and set
     const hash = this.getLocation().replace('#', '');
+    
     this.setState({
       currentSlide: parseInt(hash)
     })
