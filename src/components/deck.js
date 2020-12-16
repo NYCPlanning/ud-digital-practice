@@ -5,6 +5,8 @@ import { globalHistory } from '@reach/router';
 import Slide from './slide';
 import SwipeControls from './swipeControls';
 import Counter from './counter';
+import Clock from './clock';
+import SlideTitle from './slideTitle';
 
 const dateFormatted = () => format(new Date(), 'MM/dd/yyyy hh:mm');
 
@@ -129,8 +131,8 @@ class Deck extends React.Component {
         </Helmet>
         {/* <div className='gradient-bg'/> */}
         <div id='header'>
-          <small className='small fixed top-0 left-0 m-2 text-white'>{frontmatter.title}</small>
-          <small className='small fixed top-0 right-0 m-2 text-white'>{dateTime}</small>
+          <SlideTitle title={frontmatter.title} />
+          <Clock time={dateTime} />
           <Counter text={`${currentSlide}/${slides.length}`} />
           <div className="fixed bottom-0 left-0 m-4 z-50">
             <a href="https://www1.nyc.gov/site/planning/index.page" title="DCP">

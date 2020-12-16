@@ -56,6 +56,7 @@ module.exports = {
               linkImagesToOriginal: false,
               backgroundColor: 'none',
               wrapperStyle: `margin: 0; padding: 0;`,
+              maxWidth: 1080,
             },
           },
         ],
