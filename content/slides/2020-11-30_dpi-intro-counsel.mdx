@@ -10,6 +10,7 @@ import ImageAbove from '../../src/layouts/slides/imageAbove';
 import Centered from '../../src/layouts/slides/centered';
 import ThreeViewer from '../../src/components/threeViewer';
 import Image from '../../src/layouts/slides/image';
+import SVGInteractive from '../../src/components/svgInteractive';
 
 <!-- END IMPORTS, BEGIN FIRST SLIDE -->
 
@@ -74,15 +75,15 @@ We have a vision for how **models** can help designers and planners be more cont
 Models, in general:
 
 - Record and store information about places
-- Are tangible/intuitive
+- Are tangible and intuitive
 - Allow us to experiment
 - Keep everybody on the same page
 
 ---
 
-*Digital* models can also reflect rules, behavior and change over time. This makes them a powerful tool for physical planning. They can help us:
+*Digital* models have the added benefit of encoding things like rules, behavior and change over time. This makes them a powerful tool for physical planning. They can help us:
 
-- **Evaluate zoning**, in spatial terms
+- **Evaluate zoning**
 - **Quantify impact**
 - **Coordinate consensus**
 
@@ -90,9 +91,9 @@ Models, in general:
 
 ---
 
-Their main downside is they are *not* tangible/intuitive. Instead, specialized **tools** are needed to access **data**, using the appropriate **methods**.
+Their main downside is they are not tangible or intuitive like physical models. Digital modeling (as a *practice*) involves specialized **tools**, used together with the right **methods**, to access and manipulate **data**.
 
-<!-- These last two points are particularly important for remote work! -->
+**The overarching goal of this work is to make working with digital models as easy as possible.**
 
 ---
 
@@ -106,7 +107,7 @@ How is DCP doing on acheiving a high-quality modeling practice? These are some m
 
 ---
 
-![Background Timeline](../assets/2020/12/timeline-background_themes.svg)
+![Background Timeline](../assets/2020/12/timeline-background-themes.svg)
  
 <!-- This chart shows staff changes, as well as developments in both the development of tools and data  -->
 
@@ -120,10 +121,9 @@ How is DCP doing on acheiving a high-quality modeling practice? These are some m
 
 **NYC Digital Twin**
 
-- Collects multiple Open Data layers in the same "place"
-- Data from DCP EDM, DOITT, Parks, DOT and others
-- Can be used in Rhino, GIS and the web
-- Currently internal-only, but scaleable
+- Collects multiple Open Data layers in the same place
+- Data from DCP, DOITT, Parks, DOT and others
+- Provides the basis for spatial understanding of zoning
 
 ![Digital Twin Layers](../assets/2020/08/digital-twin-layers.png)
 
@@ -148,15 +148,36 @@ The digital twin contains information about street widths, overlays and more tha
 
 <ImageRight>
 
+**NYC Digital Twin**
+
+- Collects multiple Open Data layers in the same place
+- Data from DCP, DOITT, Parks, DOT and others
+- Provides the basis for spatial understanding of zoning
+
+**DCP is in a singular position to build and maintain this** because it is:
+
+- Specific to NYC
+- Based on our own data products (MapPLUTO)
+- Not a "scalable" project
+
+![Digital Twin Layers](../assets/2020/08/digital-twin-layers.png)
+
+</ImageRight>
+
+---
+
+<ImageRight>
+
 **UDTools**
 
 - Adds new functionality to Rhino
-- Fetches models from NYC Digital Twin
-- Evaluates zoning based on context
-- Calculates key development metrics
+- Retrieve data from NYC Digital Twin
+- Evaluate zoning in 3D, based on context
+- Generate RWC development models
+- Calculate impact from key metrics in real time
 - Saved file provides a single "source of truth" on large/complex projects
 
-![Screenshot of UDTools](../assets/2020/08/udtools.png)
+![Screenshot of UDTools](../assets/2020/12/udtools_screenshot.png)
 
 </ImageRight>
 
@@ -176,7 +197,7 @@ This is where the "rubber meets the road"
 
 ---
 
-<Image caption={''} mode={'center'}>
+<Image caption={'1. Set Context'} mode={'center'}>
 
 ![Using UDTools software to import a model](../assets/2020/12/udtools_context.gif)
 
@@ -184,7 +205,7 @@ This is where the "rubber meets the road"
 
 ---
 
-<Image caption={''} mode={'center'}>
+<Image caption={'2. Set Site Locations'} mode={'center'}>
 
 ![Using UDTools software to set up a site analysis](../assets/2020/12/udtools_setup.gif)
 
@@ -192,7 +213,7 @@ This is where the "rubber meets the road"
 
 ---
 
-<Image caption={''} mode={'center'}>
+<Image caption={'3. Generate Envelopes and Massings'} mode={'center'}>
 
 ![Using UDTools software to generate site massings](../assets/2020/12/udtools_buildmeasure.gif)
 
@@ -200,7 +221,7 @@ This is where the "rubber meets the road"
 
 ---
 
-<Image caption={''} mode={'center'}>
+<Image caption={'4. Calculate Key Metrics'} mode={'center'}>
 
 ![Using UDTools software to quantify development metrics and export data](../assets/2020/12/udtools_summary.gif)
 
@@ -208,14 +229,17 @@ This is where the "rubber meets the road"
 
 ---
 
+<Image caption={''} mode={'center'}>
 
-A model-based approach can support diverse uses beyond the RWCDS:
+![Advanced analysis examples](../assets/2020/12/advanced-analysis.png)
+
+</Image>
+
+<!-- A model-based approach can support diverse uses beyond the RWCDS:
 
 - Environmental simulation
 - Spatial data analysis
 - Interactive web features
-
-<!-- 
 <ImageAbove>
 
 ![environmental simulation examples](../assets/2020/08/environmental-simulation.png)
@@ -248,17 +272,19 @@ Spatial Data Analysis: Roof Shapes for MOS
 
 # **Broadening Impact**
 
----
-
-DPI's products are designed for NYC, and built around DCP's requirements. But their potential value extends beyond the agency.
+<!-- As we wrap up the first year of the project, and get into a good pattern of consistent improvements to our products based on feedback from users, we want to think about how to broad  -->
 
 ---
 
-We want to better understand how we can maximize value to the agency and the public in three different arenas:
+DPI's products are designed for NYC, and built around DCP's requirements. But they also create **value for (and with) stakeholders outside the agency**.
 
-- Within city government
-- At the "public-private interface"
-- In the NYC design community and public at large
+---
+
+We want to better understand how we can **maximize value to the agency and the public** in three different arenas:
+
+1. Within city government
+2. At the public-private interface
+3. In the NYC design community and public at large
 
 In each context, we especially want to consider:
 
@@ -267,13 +293,50 @@ In each context, we especially want to consider:
 
 ---
 
-Things we're considering:
+![Audience: All](../assets/2020/12/dpi-audience.svg)
 
-- Adopting an open-source development model to work with outside contributors
-- Launching a pilot program to explore possibilities for consultant coordination
-- Parnering with NYC tech companies to co-develop the Digital Twin
-- Offering our products to the public for a fee
-- Building our user base through partnerships with design schools
+---
+
+![Audience: City Government](../assets/2020/12/dpi-audience-public.svg)
+
+<!-- 
+
+Working with internal stakeholders and a small group of sister agency partners (HPD, EDC) has been a great way to work so far, giving us room to experiment. But the City is increasingly resource-constrained, and we want to look for opportunities to engage both with new user bases and potential project contributors that can help create additional value for the agency.
+
+-->
+
+---
+
+![Audience: Public-Private Interface](../assets/2020/12/dpi-audience-public-private.svg)
+
+<!-- 
+
+We feel that a good next place to start with this could be to explore the "public-private interface". 
+
+Over the summer, we were called on to assist with HPD's Edgemere project, largely because HPD no longer has staff with 3d modeling skills. We identified the possibility that DPI products shared with their consultants could potentially reduce turnaround time for proposal iterations and reduce costs for the city. We want to explore the possibility of a pilot program to explore how tools shared with design firms and other consultants could result in savings for the agency.
+
+-->
+
+
+---
+
+![Audience: Public](../assets/2020/12/dpi-audience-private.svg)
+
+<!-- 
+
+Contributors here means both data providers and software developers. We want to also adopt a FULLY OPEN-SOURCE DEVELOPMENT MODEL to allow external contributors to help build products that can benefit everyone.
+
+Offering our products to the public for a fee could potentially create a funding stream for the project and help to build capacity. Note that this is not necessarily mutually exclusive with an open-source model.
+
+While design schools lack the resources to contribute meaningfully to the project, making connections with future architects and planners in LOCAL UNIVERSITIES early-on can build our user base.
+
+Partner with tech companies and/or design firms to develop the digital twin.
+
+-->
+
+---
+
+We'd like to meet with you again in the new year to discuss the **benefits and risks of "going public" with our work**.
 
 ---
 
@@ -283,5 +346,4 @@ Things we're considering:
 
 <!-- 
 <ThreeViewer scene='/blocks.glb' />
-
  -->

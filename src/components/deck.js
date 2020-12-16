@@ -156,9 +156,12 @@ class Deck extends React.Component {
 
           p, ul, ol {
             color: var(--contrast-blue-darkest);
-            list-style-type: disc;
             margin-bottom: 1.15rem;
             max-width: 30em;
+          }
+
+          ul {
+            list-style-type: disc;
           }
 
           p + ul {
