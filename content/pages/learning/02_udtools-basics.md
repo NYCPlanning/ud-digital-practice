@@ -16,6 +16,7 @@ title: Rhino Basics
 
 - Session 1
 - Basic familiarity with Rhino (expand)
+- Helpful but not required to have some understanding/experience with GIS
 
 ## Learning Objectives 
  
@@ -26,28 +27,48 @@ title: Rhino Basics
 - Generate a massing for a defined site; understand how development metrics are calculated and previewed 
 - Export data for use in Excel or GIS 
 
-
-
-
 ## Outline
 
 - **Provide an overview of key concepts and recommended practices for urban modeling with UDTools + Rhino**
-  - the NYC Digital Twin
-  - UDTools, extends Rhino to do cool stuff related to urban design and zoning
-    - Connect with the Digital Twin, 
-    - “Understand” zoning and urban design concepts, 
-    - Generate zoning-compliant massings for real-world or hypothetical sites, 
-    - Produce detailed take-offs of key development scenario metrics. 
-  - tools vs methods. not just a "magic tool"
-  - tool ecology  – meant to provide a "kit of parts" that can help solve different problems, rather than just automating a specific task
-  - important concepts
-    - layer standard, like AIA CAD guidelines, used to guarantee models people work on are organized the same way so complex models are readable by other people
-    - "smart geometry" – CAD is just shapes, but BIM and GIS rely on the idea of geometry with attributes (properties) and geometry with "methods" - you can ask them questions and ask them to calculate things about themselves. this allows stuff to happen under the hood
-      - UDTools enhances otherwise "dumb" shapes in Rhino to be able to store information and answer questions based on *what* they are and how they fit into a *context*
-    - defaults/overrides – things are set up to be as simple as possible but you can also provide more detail/nuance when needed, provided you understand some ground rules and how these need to be defined (covered later)
+- Pick up from last time: towards easy urban modeling
+  - How many people have GIS experience?
+  - How many people have BIM experience, like Revit?
+  - Can anyone that raised their hand offer a definition for what GIS or BIM is? (What makes it different than a drawing in powerpoint?)
+  - The goal of UDTools is to make certain kinds of modeling you can do in GIS/BIM way easier
+  - How do we represent urban spaces in Rhino?
+    - Rhino geometry basics
+      - Points, Lines, PolyLines. Analogs in GIS (Polygons are closed polylines, with or without holes)
+      - Surfaces, PolySurfaces and Meshes
+    - Attributes
+      - Rhino has very limited attribute functionality outside of display properties/materials etc. It is mainly a tool for describing shapes of things
+      - GIS has attribute table, that can describe any number of custom properties for each object
+      - ⚠️ UDTools "interprets" geometry as special "smart objects" with geometry, attributes and behavior, and lets you deal with them inside Rhino
+  - How does this work?
+    - Layer Standard. like AIA CAD guidelines, used to guarantee models people work on are organized the same way so complex models are readable by other people
+    - here we use it "semantically" that is, it gives the geometry in the rhino model special meaning. A point is just a point until you put it on `street-tree`, then it represents the location of a specific street tree captured in the street tree census
+    - as UDTools interprets your model, it makes lots of assumptions along the way. Making this easy requires the use of dozens of "default assumptions" that obscure a lot of nuance in the interest of simplification. But UDTools is also designed to allow you to override these assumptions when you need to. in future tutorials we'll look at how this is done at different points in the process
+
+  - OK so what can I do with this?
+    - There is a lot but today we're focusing on simple zoning analysis
+    - Once you have smart objects, you can interact with them using special tools to ask them questions
+    - You can say, OK zoning lot, what does your maximum zoning envelope look like? How much floor area could I reasonably fit in there? etc.
+    - You can also say "Who owns you?" or "When was the last time someone pulled permits for a major construction project here"
+    - (DPI philosophy)
+      - The question really matters
+      - tools vs methods: not just a "magic machine" that spits out answers but something that participates in an existing ecosystem of professional tools that you can use in a number of ways to solve different problems
+      - Current components:
+        - NYC Digital Twin
+          - centralized data model containing everything we know from Open Data and other sources about the current state of the city
+        - UDTools, extends Rhino to do cool stuff related to urban design and zoning
+          - Connect with the Digital Twin, 
+          - “Understand” zoning and urban design concepts, 
+          - Generate zoning-compliant massings for real-world or hypothetical sites, 
+          - Produce detailed take-offs of key development scenario metrics.
+        - UDTools grasshopper components
+
   - how to install. this is already running on my machine, but here's how you would do it:
-    - prerequisites
-    - Rhino 6 running on Mac/PC, either agency desktop or personal computer
+    - Prerequisites:
+      - Rhino 6 running on Mac/PC, either agency desktop or personal computer
     - From DPI documentation page on installation:
       - download
       - unzip
@@ -141,3 +162,11 @@ title: Rhino Basics
   - jsut one site in this demo, but if we had more than one site this would show a list of all sites in the model
   - shows broad use category total, residential unit count
   - excel sheet can be downloaded, needs special scenario names for rwcds
+
+---
+
+further reading:
+
+- gis definitions
+- bim definitions
+- layer standard
