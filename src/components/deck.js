@@ -122,7 +122,7 @@ class Deck extends React.Component {
     const slideMarkup = slides.map((slide, i) => 
       <Slide key={i} pageNum={i + 1} current={currentSlide} slide={slide}/>
     );
-    const aspectPreviewClass = aspectPreview ? 'border-2 border-black' : ''; 
+    const aspectPreviewClass = aspectPreview ? 'border-2 border-black' : '';
 
     return (
       <div id='deck-root' className={`h-full w-full xl:text-3xl lg:text-lg md:text-base sm:text-xs`}>
@@ -136,7 +136,11 @@ class Deck extends React.Component {
           <Counter text={`${currentSlide}/${slides.length}`} />
           <div className="fixed bottom-0 left-0 m-4 z-50">
             <a href="https://www1.nyc.gov/site/planning/index.page" title="DCP">
-              <img className="w-16" src="https://raw.githubusercontent.com/NYCPlanning/dcp-logo/master/dcp_logo.svg" alt="DCP"/>
+              <img 
+                className="w-16" 
+                src="https://raw.githubusercontent.com/NYCPlanning/dcp-logo/master/dcp_logo.svg" 
+                alt="DCP"
+              />
             </a>
           </div>
         </div>
