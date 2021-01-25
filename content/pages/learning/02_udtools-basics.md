@@ -165,8 +165,10 @@ title: Rhino Basics
 
 ---
 
-further reading:
+## To-Do:
 
-- gis definitions
-- bim definitions
-- layer standard
+- insert comment about tool "ecosystems" - meant to provide robust but flexible "kit of parts" that can help solve different problems, rather than just performing a specific task
+- further reading:
+  - gis definitions
+  - bim definitions
+  - layer standard
