@@ -1,3 +1,8 @@
+---
+slug: /static-model/convert-skp
+title: Convert for Sketchup
+---
+
 Rhino to Sketchup Export Instructions
 
 ![screenshot of small model in rhino]()

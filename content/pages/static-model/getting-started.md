@@ -1,3 +1,8 @@
+---
+slug: /static-model/getting-started
+title: Getting Started
+---
+
 NYC 3D Model Instructions
 
 Getting Started

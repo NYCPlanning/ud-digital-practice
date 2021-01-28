@@ -16,7 +16,7 @@ const calc = (x, y) => {
 }
 const trans = (x, y, s) => (`perspective(600px) translate(${x}px, ${y}px) scale(${s})`)
 
-export default ({ caption, children, mode }) => {
+export default ({ path, alt, caption, mode, children }) => {
   const modeClass = ( mode === 'center' ) ? ' items-center ' : ' items-left '
   const [props, set] = useSpring(() => ({
         xys: [0, 0, 1.75], 
@@ -28,6 +28,19 @@ export default ({ caption, children, mode }) => {
       }
     )
   )
+  
+  let contents = children
+  console.log(React.isValidElement(children))
+  console.log(React.Children.count(children))
+  console.log(React.Children.toArray().length)
+
+  if ( !React.isValidElement(children) ) {
+    contents = <img
+      className='w-full h-full'
+      src={path} 
+      alt={alt}
+    />
+  }
 
   if ( mode === 'interactive-zoom' ) {
     return (
@@ -36,18 +49,18 @@ export default ({ caption, children, mode }) => {
           onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })} onMouseLeave={() => set({ xys: [0, 0, 1.75] })} 
           style={{ transform: props.xys.interpolate(trans) }}
         >
-          {children}
+          {contents}
         </a.div>
         <style jsx global>{`
 
         `}</style>
       </div>
-
     )
   } else {
+    console.log('returning default')
     return (
       <div className={`relative h-full w-full p-8 flex flex-col align-center justify-center ${modeClass}`}>
-        {children}
+        {contents}
         <span className='text-xs'>{caption}</span>
       </div>
     )

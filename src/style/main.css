@@ -160,3 +160,22 @@ marker {
   fill: white !important;
   stroke: var(--contrast-blue-darker) !important;
 }
+
+/* SLIDE TABLE */
+
+.slide-table table {
+  font-size: 0.75em;
+}
+
+.slide-table code {
+  background: none;
+  color: black;
+}
+
+.slide-table th {
+  text-align: left;
+}
+
+.slide-table td {
+  padding-right: 2em;
+}

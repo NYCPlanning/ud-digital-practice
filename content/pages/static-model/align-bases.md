@@ -1,3 +1,8 @@
+---
+slug: /static-model/align-bases
+title: Align Bases
+---
+
 How to remodel the NYC 3D Model without contour elevation
 The buildings in NYC’s 3D model are at elevation, meaning that their bases sit on an invisible contoured
 surface. While this can be positive in some instances, many planners and designers prefer all of their
