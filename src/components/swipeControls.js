@@ -4,20 +4,20 @@ import { useSwipeable } from "react-swipeable";
 const SwipeControls = ({ advance }) => {
   const handleSwipe = (e) => {
     switch(e.dir) {
-      case 'Right':
-      case 'Down':
-        advance(1);
-        break;
       case 'Left':
       case 'Up':
         advance(-1);
         break;
+      case 'Right':
+      case 'Down':
       default:
+        advance(1);
         break;
     }
   }
   
   const handlers = useSwipeable({ 
+    onTap: (e) => handleSwipe(e),
     onSwiped: (e) => handleSwipe(e),
     preventDefaultTouchmoveEvent: true,
     trackMouse: true
