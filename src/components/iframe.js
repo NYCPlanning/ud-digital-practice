@@ -4,7 +4,7 @@ export default ({ src }) => {
   return (
     <div className='w-full h-full p-4'>
       <iframe src={src}
-        className='w-full h-full shadow-inner'
+        className='w-full h-full'
         frameborder='0' 
         allowfullscreen='' 
         aria-hidden='false' 

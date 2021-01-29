@@ -156,3 +156,9 @@ Have you heard talk of the “magic machine”, the “miracle box” or the “
     - Session 3 – Large models, RWCDS
   - Repeat, you can always find up-to-date information about what's going on with the DPI via our documentation page:
     - https://ud-digital-practice.netlify.app
+
+---
+
+## To-Do
+
+- [ ] 

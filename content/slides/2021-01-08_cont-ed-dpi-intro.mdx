@@ -22,32 +22,48 @@ import IFrame from '../../src/components/iframe';
 
 ## Welcome
 
-- First in a three-part series on digital modeling practices in Urban Design
-- Meant to introduce UD Digital Practice Initiative (DPI) and two products, the NYC Digital Twin and UDTools for Rhino
-- Sessions 2 and 3 will be tutorials for UDTools
-- This one's focused on background and can be more of a discussion
-- Please feel free to interrupt with any questions or drop them in the chat!
+- This is the first in a three-part series on digital modeling practices in Urban Design
+- Meant to introduce UD Digital Practice Initiative (DPI), goals, challenges and ideas
+- Sessions 2 and 3 are planned as tutorials for UDTools and will be held in late March
 
-<!-- DPI for short -->
-
----
-
-## What's a computational designer?
-
-- Subfield of architecture
-- Architectural practice as a collection of technologies for **communicating** and **organizing spatial information**
-- Traditional: drawings & models
-- New: GIS, BIM, web and games
+Please feel free to interrupt with any questions or drop them in the chat!
 
 <!-- 
 
-About me: I am an architect by training, Columbia M. Arch '18
+I'm going to throw a lot of ideas and information out but hopefully this won't be a completely one-sided conversation.
 
-Growing role of new media as a common language for different kinds of people
+Will leave room at the end hopefully for more Q&A and discussion, but feel free to interrupt during the session too.
 
 -->
 
 ---
+
+## What's Computational Design?
+
+- Subfield of architecture
+- Architectural practice as a collection of technologies for **communicating,** and **organizing spatial information**
+- Traditional media: drawings & models
+- New media: web, games, GIS and BIM
+
+<!-- 
+
+I know most of you by now in spite of the pandemic – I'll introduce myself to kick off just in case. I started just about a year ago as the lead computational designer for the urban design office. What does that mean?
+
+I'm an architect by training, Columbia M. Arch '18. Computational design is a kind of sub-field of architecture focused on how designers can use computers in their work, a little non-specific if you ask me.
+
+While there's a lot of high-profile work out there focused on "generative design", I'm more interested in two things that aren't super different from what an architect would do normally, that is, using a bunch of different tools and techniques to communicate about and organize spatial information.
+
+The traditional way this happens is through drawings and models, I'm also super interested in new mediums like websites, games and tools like GIS and BIM as ways of doing this. Especially the first two, since they're becoming more and more accessible and democratic.
+
+-->
+
+---
+
+<!-- 
+
+So broadly my job here is about bringing some of these tools and techniques to bear on the work we do here at DCP, as reflected in this mission statement we've come up with.
+
+ -->
 
 The **Digital Practice Initiative** (DPI) seeks to amplify and add value to urban design and physical planning in NYC, through the development and dissemination of **tools**, **methods** & **data**.
 
@@ -57,13 +73,19 @@ We have a vision for how **digital models** can help designers and planners be m
 
 ## What we'll talk about today:
 
-- What can models do for us?
-- Background and key challenges of the DPI
+- Precedents: What can models do for us?
+- Project background and key challenges
 - Products:
   - NYC Digital Twin
   - UDTools for Rhino
-- Next steps
+- Future directions
 - Resources
+
+<!-- 
+
+Again, this is meant to be an introduction to the work program and what we have to offer, the second and third sessions later in March will cover specifics of how to use the software tools I'm developing for the agency.
+
+ -->
 
 ---
 
@@ -128,80 +150,109 @@ Models, in general:
 
 They're also cheap and reproducible.
 
+<!-- 
+
+For anyone who's unfamiliar, a take-off is a term from the construction industry that refers to quantitative information you're getting from looking at a set of construction documents, traditionally drawings.
+
+-->
+
 ---
 
 Unfortunately they're less intuitive to work with than physical models. Digital modeling (as a *practice*) involves specialized **tools**, used together with the right **methods**, to access and manipulate **data**.
 
-**The overarching goal of the DPI is to bridge the gap between the accessibility of physical models and the analytical power of digital ones.**
+**The current focus of the DPI is to bridge the gap between the accessibility of physical models and the analytical power of digital ones.**
+
+<!-- Here's this trifecta of tools, methods and data again – you'll hear me refer back to these a few more times. -->
 
 ---
 
-## How did this all start?
+## Project Background
+
+How did this all start?
 
 ---
 
-## The problem
+## The Problem
 
 Defining a RWCDS for CEQR used to require a huge amount of very tedious work.
 
-<!-- UD has been exploring custom digital modeling tools since mid-2017
- -->
+<!--
+
+Next we want to understand how DCP got (back) into the model business, and what's happened so far to advance some of these new methods.
+
+Rewinding to 2017, the problem was like so:
+
+I'm pretty new still so I don't have a great sense of who was around when this was happening – Was anybody here around for this part?
+
+In order to do the analysis work required under CEQR, you have to first define a RWCDS – Reasonable Worst Case Development Scenario. Ultimately this definition is reflected in a 3d model and a giant Excel spreadsheet (the technical term for this, I understand, is "The Big Spreadsheet")
+
+-->
 
 ---
 
-## The old way
+## The Old Way*
 
-- first, study area tax lots from MapPLUTO needed to be collected, clipped and converted to a CAD format using ArcMap
-- then designers needed to "manually" mass individual development sites for each of the three CEQR analysis conditions
-- then, once the form of each one was ready, each floor needed to be measured
-- finally these measurements needed to be entered into a spreadsheet
-- let's say we have **40 sites**, at **8 stories** each, across **three scenarios**
-- that means repeating steps 2 and 3 almost 1000 times
-- and then doing it all over again each time a site changes!
+*Do not attempt to try this at home!
 
-<!-- who remembers how long it took for ArcMap to open on our agency desktops? -->
-
----
-
-Rumor has it the whole Urban Design division would sometimes be assigned to working on this for weeks.
-
-Nobody wants this! so people started cooking up a plan...
-
----
-
-- in late 2018 another computational designer, Xun Liu joined the urban design team
-- together with David Vega-Barachowitz developed what was called the "Parametric Tool"
+<!-- Since we're all at home for the forseeable future, or at least until May, I need to add this disclaimer -->
 
 ---
 
 <ImageRight>
 
-## The Parametric Tool
+1. Using ArcMap, get a fresh copy of MapPLUTO, clip it to your study area and use it to define the different **sites** that make up the RWCDS. Export to CAD.
 
-- Zoning is "parametric"
-- That is, the buildable 3d envelope of a given zoning lot can be expressed (or approximated) through simple geometic rules
-- This means it can be partly automated
-- Developed and tested alongside three neighborhood studies:
-  - Bushwick
-  - North Brooklyn
-  - Bronx Metro-North
-
-<small>* or at least approximated...</small>
-
-![Background Timeline](../assets/2021/01/kaufman_sky-exposure.png)
+![looking at a map](../assets/2021/01/hp_marauders-map.gif)
 
 </ImageRight>
 
-<!-- The new way of doing things saved tons of time and effort -->
+<!-- Watch these characters in bold, they're going to become our friends later. -->
 
 ---
 
-<Image mode='center'>
+<ImageRight>
 
-<iframe width="800" height="600" src="https://www.youtube.com/embed/t09raikH9eE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+2. Use 3D modeling software to first create **zoning envelopes**, then **massings** for each individual site, under each **scenario** being considered (usually Existing, No Action and With Action).
 
-</Image>
+![casting a spell](../assets/2021/01/hp_spell-casting.gif)
 
+</ImageRight>
+
+---
+
+<ImageRight>
+
+3. Measure the floor area of each story in each massing and record it in a spreadsheet.
+
+![casting a spell](../assets/2021/01/hp_measuring.gif)
+
+</ImageRight>
+
+<!-- 
+
+Quick pause: 
+
+Let's say we have **40 sites**, at **8 stories** each, across **three scenarios**
+
+This isn't super likely since the Existing and No Action scenarios often don't need new massings. But in the unreasonable (!) worst case version of the reasonable worst case development scenario that means repeating step 3 almost 1000 times!
+
+-->
+
+---
+
+<ImageRight>
+
+4. Repeat every time there are changes to the site list or zoning.
+
+![casting a spell](../assets/2021/01/hp_repeat.gif)
+
+</ImageRight>
+
+---
+
+Rumor has it the whole Urban Design division would sometimes be assigned to working on this for weeks.
+
+Not good! Thus the motivation to find a better way was created.
 
 ---
 
@@ -211,24 +262,76 @@ Nobody wants this! so people started cooking up a plan...
 
 ![Background Timeline](../assets/2020/12/timeline-background-themes.svg)
 
+<!-- David Vega Barachowitz and later Xun Liu started this whole work program around improving our ability to work with models. Notice the "Parametric Tool" which I'll talk about in a second and the NYC 3D Model by Community District which I'll touch on in a little while -->
+
+---
+
+<ImageRight>
+
+## The Parametric Tool
+
+- Zoning is "parametric"
+- That is, the buildable 3d envelope of a given zoning lot can be expressed through simple geometic rules*
+- This means, in theory, the RWCDS can be automated
+- Developed and tested alongside three neighborhood studies:
+  - Bushwick
+  - North Brooklyn
+  - Bronx Metro-North
+
+\* obviously, a huge caveat here
+
+![Background Timeline](../assets/2021/01/kaufman_sky-exposure.png)
+
+</ImageRight>
+
+<!-- 
+
+The phrase trial by fire comes to mind.
+
+Still, the new way of doing things saved tons of time and effort.
+
+-->
+
+---
+
+<Image mode='center'>
+
+<iframe width="800" height="600" src="https://www.youtube.com/embed/t09raikH9eE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</Image>
+
+<!-- 
+
+Here's what it looked like. You can see it's hooked up to The Big Spreadsheet directly.
+
+-->
+
 ---
 
 ## Challenges: Parametric Tool
 
 - People had started to talk about other possibilities beyond the RWCDS:
-  - Other CEQR sections: shadow studies, open-space analysis
+  - Other CEQR Sections: shadow studies, open-space analysis
   - Zoning Spell-Check: pre-screen applicant projects for common problems
   - Flexible modeling and analysis environment for one-off projects
 - The Parametric Tool focused on RWCDS only
 - Tough to set up and use (requires knowledge of Grasshopper)
 - Requires time-consuming setup and prep in GIS
 
+<!-- 
+
+Grasshopper is a visual programming environment included with the Rhino 3D modeling software.
+
+So the process got faster but at the cost of a big learning curve, and the Parametric Tool got kind of "typecast" in just one of a growing list of roles.
+
+-->
+
 ---
 
 ## Needs
 
 - Easier
-- Contextually grounded
+- More accessible spatial data
 - More flexible
 
 ---
@@ -254,7 +357,7 @@ Downloadable Rhino files of each NYC Community District. Combines 3D building da
 ✅ Convenient 3D view of the city  
 ✅ Released publicly through OpenData  
 
-![3D Model of NYC screenshot](../assets/2020/07/downloadable-nyc-model.png)
+![3D Model of NYC screenshot](../assets/2021/01/model-by-cd.png)
 
 </ImageRight>
 
@@ -272,14 +375,6 @@ Downloadable Rhino files of each NYC Community District. Combines 3D building da
 - Geometry only (no attributes)
 
 <!-- still need to use GIS to get base map for RWCDS -->
-
----
-
-<Image caption={'NYC Digital Twin'} mode={'center'}>
-
-![Digital Twin Layers](../assets/2020/08/digital-twin-layers.png)
-
-</Image>
 
 ---
 
@@ -343,7 +438,6 @@ Again, having the best data possible is a precursor to a robust zoning algorithm
 
 </Table>
 
-
 <!-- What's in the Digital Twin now? -->
 
 ---
@@ -352,12 +446,10 @@ Again, having the best data possible is a precursor to a robust zoning algorithm
 
 ## UDTools for Rhino
 
-Rhino = best-in-class 3D modeling software
-
-Accurate, fast, powerful and **extensible**
+Rhino is a preferred 3d modeling tool across different industries because it's accurate, fast, powerful and **extensible**.
 
 - UDTools seamlessly adds new functionality to Rhino:
-  - Fetch context models of real-world sites from NYC Digital Twin
+  - Fetch site models from NYC Digital Twin
   - "Understand" Zoning Lots spatially
   - **Generate** RWC envelopes and massings
   - **Measure** impact from key metrics in real time
@@ -370,10 +462,9 @@ Accurate, fast, powerful and **extensible**
 
 Introduce "smart objects"? 
 
-  - Saved file provides a single "source of truth" on large/complex projects
+- Saved file provides a single "source of truth" on large/complex projects
 
-
- -->
+-->
 
 ---
 
@@ -409,25 +500,30 @@ Introduce "smart objects"?
 
 ---
 
+# **Future Directions**
+
+- Environmental analysis (Grasshopper)
+- Data science projects (Python/R)
+- Digital engagement (Three.js)
+- Zoning Spell-Check Plugins for Rhino/Revit
+- Digital Twin Viewers for Non-designers
+- Applicant Model Pipeline
+
+<!-- 
+
+Organized roughly in order of ease/possibility, here are a few other things we're working towards
+
+-->
+
+---
+
 <Image caption={'Beyond the RWCDS'} mode={'interactive-zoom'}>
 
 ![Advanced analysis examples](../assets/2020/12/advanced-analysis.png)
 
 </Image>
 
----
-
-# **Future Directions**
-
----
-
-## Grasshopper Components for Environmental/Custom Analysis
-
 <!-- Users can access and manipulate low-level functions without need for programming know-how. Userful for custom analysis workflows and environmental simulation. Like shadow studies! -->
-
----
-
-## Digital Engagement Deliverables
 
 ---
 
@@ -435,15 +531,7 @@ Introduce "smart objects"?
 
 ---
 
-## Data Science Projects and Collaborations
-
----
-
-## Zoning Spell-Check Plugins for Rhino/Revit
-
-## Digital Twin Viewers for Non-designers
-
-## Applicant Model Pipeline
+![Audience: Public-Private Interface](../assets/2020/12/dpi-audience-public-private.svg)
 
 ---
 
@@ -452,6 +540,8 @@ Introduce "smart objects"?
 You can always find up-to-date information, tutorials and other resources on the DPI documentation site:
 
 https://ud-digital-practice.netlify.app/
+
+For additional help, contact Crystal Eksi for one-on-one trainings and project support. Requests for more extensive collaborations should be directed to Erick Gregory, and Carsten Rodin is available on a limited basis to discuss tool-specific issues and ideas for future development.
 
 <!-- links on The GUide will be up soon -->
 
