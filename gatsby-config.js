@@ -3,13 +3,12 @@ require('dotenv').config({
 })
 
 module.exports = {
-  pathPrefix: `/ud-digital-practice`,
   siteMetadata: {
-    title: `Digital Practice Initiative`,
+    title: `Urban Design Digital Practice`,
     name: `Author`,
-    description: `Brief description of your site`,
-    author: `Urban Design Office`,
-    date: `2020-08-00`,
+    description: `Documentation, tutorials and resources for NYC Planning's Urban Design Digital Practice Initiative`,
+    author: `NYC Planning Urban Design Office`,
+    date: `2021-02-24`,
   },
   plugins: [
     `gatsby-plugin-postcss`,
