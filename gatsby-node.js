@@ -1,6 +1,3 @@
-const fs = require(`fs`)
-const path = require(`path`)
-const mkdirp = require(`mkdirp`)
 const Debug = require(`debug`)
 const pkg = require('./package.json')
 
@@ -10,12 +7,6 @@ let basePath
 let contentPath
 
 const pageTemplate = require.resolve('./src/templates/page')
-
-const resolveTitle = async (...args) => {
-  const headings = await mdxResolverPassthrough('headings')(...args)
-  const [first = {}] = headings
-  return first.value || ''
-}
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
@@ -43,7 +34,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { allMarkdownRemark } = result.data
   const pages = allMarkdownRemark.edges // could filter by path, edges.filter(e => e.node.fileAbsolutePath.includes('pages'));
 
-  pages.forEach(({ node }, index) => {
+  pages.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.slug,
       component: pageTemplate,
@@ -54,10 +45,3 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   });
 }
-
-// exports.onCreateDevServer = ({ app }) => {
-//   if (typeof process.send !== 'function') return
-//   process.send({
-//     mdxDeck: true,
-//   })
-// }
