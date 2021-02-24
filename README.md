@@ -1,10 +1,10 @@
-# Urban Design Digital Practice
+# [Urban Design Digital Practice](https://ud-digital-practice.netlify.app/)
 
-This repo contains documentation, tutorials, presentations and other resources supporting the Urban Design Office's Digital Practice Initiative. These materials are available for viewing via GitHub Pages [here](https://nycplanning.github.io/ud-digital-practice).
+This repo contains documentation, tutorials and other resources supporting NYC Planning's Urban Design Digital Practice Initiative.
 
 ## Development
 
-From the project root:
+From this directory:
 
-- To run a local development server: `$ npm start`
-- To deploy to GitHub pages: `$ npm run deploy`
+- Run a local development server: `$ npm start`
+- Deploy site to Netlify: `$ npm run deploy`
