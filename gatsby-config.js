@@ -3,6 +3,7 @@ require('dotenv').config({
 })
 
 module.exports = {
+  flags: { QUERY_ON_DEMAND: true },
   siteMetadata: {
     title: `Urban Design Digital Practice`,
     name: `Author`,
