@@ -1,10 +1,6 @@
 import React from 'react'
-import DefaultLayout from './default'
-import SlideLayout from './slideLayout'
+import Layout from './default'
 
-export default ({ children, pageContext }) => {
-  if (pageContext.layout === "slideLayout") {
-    return <SlideLayout>{children}</SlideLayout>
-  }
-  return <DefaultLayout>{children}</DefaultLayout>
+export default ({ children }) => {
+  return <Layout>{children}</Layout>
 }
