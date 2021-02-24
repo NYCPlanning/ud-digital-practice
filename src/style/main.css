@@ -39,7 +39,7 @@ p, ul, ol {
 }
 
 h1, h2, h3, h4, h5 {
-  color: var(--contrast-blue-darker);
+  color: var(--contrast-blue-darkest);
   margin: 2.75rem 0 1.05rem;
   font-weight: bold;
   line-height: 1.15;
