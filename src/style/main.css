@@ -5,23 +5,19 @@
 /* overrides to tailwind, applies to all pages */
 
 :root {
+  --code-bg: rgba(27, 31, 35, 0.07);
   --dcp-orange: #db691b;
   --dcp-orange-dark: #833E10;
   --dcp-orange-light: #FBEFE8;
   --contrast-blue: #287bd9;
   --contrast-blue-darker: #246fc3;
   --contrast-blue-darkest: #08192b;
+  --white: rgba(255, 255, 255, 1);
   --transparent-white: rgba(255, 255, 255, 0);
 }
 
 .gradient-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 99;
-  height: 3em;
-  width: 100%;
-  background: linear-gradient(var(--contrast-blue), var(--transparent-white));
+  background: linear-gradient(var(--transparent-white) 0%, var(--white) 25%);
 }
 
 html {
@@ -46,10 +42,9 @@ h1, h2, h3, h4, h5 {
 }
 
 code {
-  color: var(--dcp-orange);
-  background: var(--dcp-orange-light);
-  font-size: 0.95em;
-  border-radius: 0.5em;
+  background: var(--code-bg);
+  font-size: 85%;
+  border-radius: 6px;
   padding-left: 0.125em;
   padding-right: 0.125em;
 }

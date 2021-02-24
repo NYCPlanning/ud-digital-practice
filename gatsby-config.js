@@ -12,8 +12,8 @@ module.exports = {
     date: `2020-08-00`,
   },
   plugins: [
-    `gatsby-plugin-styled-jsx`,
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-styled-jsx`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
