@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
-const ZOTERO_URL = 'https://api.zotero.org/groups/2468490/items/top?key=UYzWlLfrVfaAhoaxKcTzbqep&include=bib&linkwrap=1'
+const ZOTERO_URL = `${process.env.ZOTERO_LIBRARY_URL}/items/top?&include=bib&linkwrap=1&key=${process.env.ZOTERO_KEY}`
 
 const replaceLinks = (htmlString) => {
-  const linkRe = />([\w\:\/\-\.]*)<\/a>/
+  const linkRe = />([\w:/.-]*)<\/a>/
   const html = htmlString.replace(
     linkRe,
     'target="_blank" >link</a>'
