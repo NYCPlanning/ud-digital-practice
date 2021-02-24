@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 
-import Layout from '../layouts/default'
-
 const ZOTERO_URL = `${process.env.ZOTERO_LIBRARY_URL}/items/top?&include=bib&linkwrap=1&key=${process.env.ZOTERO_KEY}`
 
 const replaceLinks = (htmlString) => {
