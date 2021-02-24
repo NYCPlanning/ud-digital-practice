@@ -33,39 +33,6 @@ module.exports = {
         path: `${__dirname}/content/assets`,
       },
     },
-    // HANDLES SLIDES + LINKED MEDIA THROUGH MDX PLUGIN ETC
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `slides`,
-        path: `${__dirname}/content/slides/`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        gatsbyRemarkPlugins: [
-          `gatsby-remark-unwrap-images`,
-          {
-            resolve: `gatsby-remark-copy-linked-files`,
-            options: {
-              ignoreFileExtensions: ['jpg', 'png'],
-            }
-          },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              disableBgImage: true,
-              disableBgImageOnAlpha: true,
-              linkImagesToOriginal: false,
-              backgroundColor: 'none',
-              wrapperStyle: `margin: 0; padding: 0;`,
-              maxWidth: 1080,
-            },
-          },
-        ],
-      },
-    },
     // HANDLES PAGES + LINKED MEDIA THROUGH REMARK TRANSFORMER ETC
     {
       resolve: `gatsby-source-filesystem`,
