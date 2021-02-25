@@ -83,7 +83,7 @@ publishSlug: /tutorials/rhino/module-2
 - Run the command `UDTools` to start, then `UDDashboard` to launch the Dashboard
   - this is the UDTools Dashboard, it's the easiest way to interact with UDTools for most tasks. It's built as a webpage and runs in your browser, but it only talks to Rhino and you can pretend like it's part of Rhino for now.
   - the dashboard is like a "remote control" for rhino, it triggers commands and makes changes to your model, reads it and displays information in a more accessible way. here's what you see:
-    - connection indicator, shows we're hooked up to Rhino, this will turn off if there's a problem
+    - connection indicator, shows we're hooked up to Rhino, this will turn off if there's a problem. You can click this to reconnect if, for example, you have to restart Rhino.
     - guide link, goes to the Digital Practice docs site for more details
     - instructions toggle, turns the short instructions on or off
     - report problem link (show how this works)
