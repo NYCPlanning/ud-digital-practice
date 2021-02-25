@@ -10,6 +10,7 @@ public_folder: /img
 collections:
   - name: 'pages'
     label: 'Pages'
+    label_singular: 'Page'
     folder: 'content/pages'
     create: true
     slug: 'index'
