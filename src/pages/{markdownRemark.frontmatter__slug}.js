@@ -7,12 +7,10 @@ export const query = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         slug
-        date
-        description
+        summary
         title
       }
       html
-      rawMarkdownBody
       timeToRead
     }
   }
