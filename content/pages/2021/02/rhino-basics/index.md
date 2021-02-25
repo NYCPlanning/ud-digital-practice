@@ -22,9 +22,15 @@ As you draw with `Line`, `Polyline` and other tools, Rhino will report the curre
 `Distance` prompts you to pick two points in the model and returns the linear distance between them. `Length` returns the total length of a curve. `Area` returns the total area of selected closed polylines, hatches or surfaces. `Volume` behaves in a similar way for closed meshes and polysurfaces.
 
 ## I have a huge site model and need to select just a small area (three or four blocks)
- 
+
 `SelBoundary` lets you choose an existing closed polyline curve to use create a selection. `Lasso` will prompt you to draw a polyline-like selection area, giving a similar result.
 
 ## I need to trim a whole bunch of lines, is there a faster way?
 
 `CurveBoolean` can be used to create new curves from a selection containing many overlapping ones. If you use the `DeleteInput` option, only the new curve will remain from the original selection when the command finishes.
+
+## Interface Customization
+
+On Mac Rhino, you can apply the settings shown below to make the interface look and feel more like Windows. The panel shown in the screenshot is found under Rhinoceros > Preferences > Themes.
+
+![mac rhino theme customization](mac-rhino-ui-config.png)
