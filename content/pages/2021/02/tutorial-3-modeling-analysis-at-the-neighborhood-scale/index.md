@@ -10,6 +10,8 @@ all agency staff who work on RWCDS analysis, while the second half will cover th
 - Planners and managers involved in the CEQR process for neighborhood studies (pt. 1 only)
 - Designers likely to use UDTools for RWCDS work (pts. 1 and 2)
 
+
+
 ### Prerequisites
 
 - Session 1
@@ -30,3 +32,10 @@ all agency staff who work on RWCDS analysis, while the second half will cover th
 
 ## Outline
 
+
+
+- SUMMARY **Export data for use in Excel or GIS**
+  - as of the 1.5 release this is broken, unfortunately, but we can see the steps to take anyway
+  - jsut one site in this demo, but if we had more than one site this would show a list of all sites in the model
+  - shows broad use category total, residential unit count
+  - excel sheet can be downloaded, needs special scenario names for rwcds
