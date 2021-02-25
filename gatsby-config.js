@@ -34,6 +34,14 @@ module.exports = {
         path: `${__dirname}/content/assets`,
       },
     },
+    // EXAMPLE USAGE OF NETLIFY CMS CONTENT
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/content/blog`,
+      },
+    },
     // HANDLES PAGES + LINKED MEDIA THROUGH REMARK TRANSFORMER ETC
     {
       resolve: `gatsby-source-filesystem`,
