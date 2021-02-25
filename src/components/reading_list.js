@@ -24,6 +24,7 @@ const ReadingList = () => {
           setState(json)
           setLoading(false)
       }).catch(err => {
+        console.log(err)
         setError(true)
         setLoading(false)
       })
@@ -32,7 +33,6 @@ const ReadingList = () => {
   if (loading) return <div>Loading...</div>
   if (error) return <div>Error fetching data :(</div>
 
-  console.log(state)
   const listItems = state.sort()
     .map(({ bib }) => ( replaceLinks(bib) ))
     .map((html, i) => (
