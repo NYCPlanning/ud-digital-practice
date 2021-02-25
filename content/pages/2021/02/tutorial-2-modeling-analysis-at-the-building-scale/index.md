@@ -1,7 +1,7 @@
 ---
 title: "Tutorial 2: Modeling & Analysis at the Building Scale"
 summary: Use UDTools for Rhino to model and analyze individual buildings.
-publishSlug: /tutorials/rhino/module-1
+publishSlug: /tutorials/rhino/module-2
 ---
 ### Audience
 
