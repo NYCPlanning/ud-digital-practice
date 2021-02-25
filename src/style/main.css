@@ -59,15 +59,15 @@ code {
 
 a {
   text-decoration: none;
-  color: var(--contrast-blue-darker);
+  color: var(--contrast-blue-darkest);
 }
 
 .a-active {
-  font-weight: bold;
-  /* background: var(--contrast-blue-darker);
-  padding-left: 0.25em;
-  padding-right: 0.25em;
-  color: white; */
+  text-decoration: underline;
+}
+
+#article-column a {
+  color: var(--contrast-blue-darker);
 }
 
 h1 {

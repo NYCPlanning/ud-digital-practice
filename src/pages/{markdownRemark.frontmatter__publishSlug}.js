@@ -6,7 +6,7 @@ export const query = graphql`
   query($id: String) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
-        slug
+        publishSlug
         summary
         title
       }
@@ -16,7 +16,7 @@ export const query = graphql`
   }
 `
 
-const Page = ({data: { markdownRemark: { html, timeToRead, frontmatter}}}) => {
+const Page = ({data: { markdownRemark: { html, timeToRead, frontmatter }}}) => {
   // frontmatter: { date, description, title }
   return (
     <Layout>
