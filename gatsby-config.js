@@ -21,7 +21,7 @@ module.exports = {
         name: `gis-2020`,
         short_name: `gis`,
         start_url: `/`,
-        icon: `${__dirname}/content/assets/favicon.png`, // This path is relative to the root of the site.
+        icon: `${__dirname}/content/favicon.png`, // This path is relative to the root of the site.
       },
     },
     // IMAGES + ASSETS, GENERAL
