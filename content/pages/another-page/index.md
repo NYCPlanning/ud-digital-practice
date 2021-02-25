@@ -1,6 +1,6 @@
 ---
 title: Another Page
-summary: Test page number 2
+summary: Test page number 3
 slug: /another/page
 ---
 Here's another page.
