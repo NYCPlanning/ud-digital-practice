@@ -43,8 +43,6 @@ publishSlug: /tutorials/rhino/module-2
       * Rhino has very limited attribute functionality outside of display properties/materials etc. It is mainly a tool for describing shapes of things
       * GIS has attribute table, that can describe any number of custom properties for each object
       * ⚠️ UDTools "interprets" geometry as special "smart objects" with geometry, attributes and behavior, and lets you deal with them inside Rhino
-
-      ![](identify-tool.gif)
   * How does this work?
 
     * Layer Standard. like AIA CAD guidelines, used to guarantee models people work on are organized the same way so complex models are readable by other people
