@@ -105,13 +105,13 @@ publishSlug: /tutorials/rhino/module-2
     * connection indicator, shows we're hooked up to Rhino, this will turn off if there's a problem. You can click this to reconnect if, for example, you have to restart Rhino.
     * guide link, goes to the Digital Practice docs site for more details
     * instructions toggle, turns the short instructions on or off
-    * report problem link (show how this works)
+    * report problem link (show how this works)***(get screen shot to attach to email)***
     * version indicator, in case you don't have it when communicating about problems
 
 Next we have five tabs that deal with different parts of the modeling and analysis process. Content in the main window changes when you switch tabs.
 
 * we'll walk through them one-by one as we model a single site
-* one last way to interact with Rhino/UDTools is through Grasshopper, a visual programming environment for Rhino. This lets you access and manipulate data in the rhino model directly, and works with a system of components and wires, each component does something with the data and wires move it around from place to place. We'll cover this in more depth in a later tutorial.
+* one last way to interact with Rhino/UDTools is through Grasshopper, a visual programming environment for Rhino. This lets you access and manipulate data in the rhino model directly, and works with a system of components and wires, each component does something with the data and wires move it around from place to place. We'll cover this in more depth in a later tutorial. ***(should i type grasshopper to show the options but not click on any of them?)***
 
 ## Import a Site Model
 
