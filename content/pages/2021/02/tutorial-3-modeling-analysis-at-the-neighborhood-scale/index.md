@@ -3,20 +3,7 @@ title: "Tutorial 3: Modeling & Analysis at the Neighborhood Scale"
 summary: Use UDTools for Rhino to document and refine a neighborhood-scale RWCDS.
 publishSlug: /tutorials/rhino/module-3
 ---
-### Audience
-
-all agency staff who work on RWCDS analysis, while the second half will cover the methods available to designers for performing the analysis using UDTools.
-
-* Planners and managers involved in the CEQR process for neighborhood studies (pt. 1 only)
-* Designers likely to use UDTools for RWCDS work (pts. 1 and 2)
-
-### Prerequisites
-
-* Session 1
-* Pt. 2 Only:
-
-  * Session 2
-  * Basic familiarity with Rhino, esp. layer management and solid modeling
+This is the third tutorial in the Introduction to UDTools series, focused on RWCDS documentation for neighborhood-scale projects like rezonings. Like the second session, the intended audience is urban designers and other Rhino users who will be tasked with producing models and takeoffs as part of their everyday work. However, project managers and others involved in the RWCDS process may find the included discussions on project roles and best practices for iterative process helpful as well.
 
 ## Learning Objectives
 
@@ -29,28 +16,15 @@ all agency staff who work on RWCDS analysis, while the second half will cover th
 * Batch-generate massings for multiple sites at once
 * Discuss recommended approaches to iteration, and how to update data exports incrementally
 
-## Outline
-
-* Recap building-scale modeling concepts/techniques
-* New concepts:
-
-  * Dimensionality. In the last tutorial, we walked through the creation of a single 
-  * Single source of truth (SSOT)
-* Situate UDTools usage for RWCDS definition within larger process for neighborhood studies
-
-  * inputs/outputs
-  * stakeholders
-  * challenges: iterative process with many variables
-
 ## The RWCDS in Context
 
 For generic actions (as contrasted with localized actions) under CEQR, such as a large rezoning, a Reasonable Worst Case Development Scenario needs to be developed and documented. Generally speaking, documentation needs to show the following:
 
-- Describe conditions at three moments in time, usually referred to Existing, No-Action and With-Action (also called scenarios)
-- All development sites identified geographically by tax lot BBL
-- Development sites marked as Projected and Potential
-- Detailed floor area breakdowns by use, with specific flags for supermarkets, medical office uses and several other categories.
-- Provide a 3D model, 2D shapefiles, and tabular data in Excel format
+* Describe conditions at three moments in time, usually referred to Existing, No-Action and With-Action (also called scenarios)
+* All development sites identified geographically by tax lot BBL
+* Development sites marked as Projected and Potential
+* Detailed floor area breakdowns by use, with specific flags for supermarkets, medical office uses and several other categories.
+* Provide a 3D model, 2D shapefiles, and tabular data in Excel format
 
 Many CEQR-related questions can be addressed by looking at the \[CEQR Technical Manual](https://www1.nyc.gov/site/oec/environmental-quality-review/technical-manual.page)
 
@@ -64,18 +38,22 @@ On a typical project,
 
 Look at \[project roles](/collaborate/roles) for a more in-depth explanation on what to expect.
 
-With that in mind, let's turn back to the technical stuff. In the previous tutorial we covered how a 
+## Review & New Concepts
 
-* Review of model structure, now thinking about dimensionality
+* New concepts:
 
-  * sites/scenarios
-  * layers
+  * Dimensionality. In the last tutorial, we walked through the creation of a single 
+  * Single source of truth (SSOT)
 
+With that in mind, let's turn back to the how-to. In the previous tutorial we covered how UDTools reads your Rhino model using a layer standard and through spatial relationships. We also covered how a site is defined as a collection of tax lots (or a user-defined boundary), while a scenario is defined as a collections of nested layers.
 
+When using UDTools at a larger scale, these are expressed exactly the same way. The only difference is that we've expanded the *dimensionality* of our model by dealing with a *list* of sites and a *list* of scenarios instead of just one of each. This also introduces the need to do things automatically to save time.
 
-Select the area bounded by Broadway, Prince Street, West Broadway, and Grand Street and run `UDImportModel`.
+To get started, we need another (bigger) site model. Select the area bounded by Broadway, Prince Street, West Broadway, and Grand Street and run `UDImportModel`.
 
-This time, let's use the "Map Only" option to get just 2D context geometry. You might want the 3D buildings later for visualization, and they can be brought in separately, but since it will make the `UDImportModel` operation take longer to complete we'll skip it for now.
+This time, let's use the "Map Only" option to get just 2D context geometry. You might want the 3D buildings later for visualization, and they can be brought in separately, but since it will make the `UDImportModel` operation take longer to complete we'll skip it for now. You should get a result like this:
+
+![UDImportModel result](importmodel_result.png)
 
 ## Saving and Restoring
 
@@ -97,10 +75,18 @@ Next let's look in `sites.csv`. You might recognize the structure of this table 
 * Batch-generate massings
 
   * How to do this with envelope overrides
-* Export scenario CSVs and full RWCDS spreadsheet
+
+## Export Data
+
+* scenario CSVs with 
 
   * as of the 1.5 release this is broken, unfortunately, but we can see the steps to take anyway
   * just one site in this demo, but if we had more than one site this would show a list of all sites in the model
   * shows broad use category total, residential unit count
   * excel sheet can be downloaded, needs special scenario names for rwcds
 * Recommended approaches to iterative/incremental process
+
+## Approaches To Iteration/RWCDS Checklist
+
+(Provide diagram of full process, inputs & outputs)
+
