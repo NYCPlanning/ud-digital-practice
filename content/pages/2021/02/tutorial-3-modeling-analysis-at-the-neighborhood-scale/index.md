@@ -3,18 +3,17 @@ title: "Tutorial 3: Modeling & Analysis at the Neighborhood Scale"
 summary: Use UDTools for Rhino to document and refine a neighborhood-scale RWCDS.
 publishSlug: /tutorials/rhino/module-3
 ---
-This is the third tutorial in the Introduction to UDTools series, focused on RWCDS documentation for neighborhood-scale projects like rezonings. Like the second session, the intended audience is urban designers and other Rhino users who will be tasked with producing models and takeoffs as part of their everyday work. However, project managers and others involved in the RWCDS process may find the included discussions on project roles and best practices for iterative process helpful as well.
+This is the third tutorial in the UDTools for Rhino training series, focused on neighborhood-scale projects and RWCDS documentation. Like the second session, the intended audience is urban designers and other Rhino users who will be tasked with producing models and quantity takeoffs as part of their everyday work. However, project managers and others involved in the RWCDS process may find the included discussions on project roles and best practices for iterative process helpful as well.
 
 ## Learning Objectives
 
-* Situate UDTools-based RWCDS analysis in the overall CEQR process; review key inputs, outputs and stakeholders
-* Discuss recommended project roles and what to expect when working with the DPI team on rezonings
-* Review key concepts and recommended practices for urban-scale modeling with UDTools + Rhino
-* Review the structure (layers, sites/scenarios) of a basic building-scale model from UDTools 101
-* Define custom zoning rules and apply proposed zoning changes spatially in your model
-* Define sites and scenarios in bulk from a table or shapefile
+* Situate UDTools-based RWCDS analysis in the overall CEQR process; review key stakeholders and roles
+* Review key concepts from building-scale tutorial (layers, sites/scenarios)
+* Introduce new concepts related to large-scale work (source-of-truth, dimensionality)
+* Define custom zoning rules and proposed zoning changes
+* Define sites and scenarios in bulk
 * Batch-generate massings for multiple sites at once
-* Discuss recommended approaches to iteration, and how to update data exports incrementally
+* Recap major inputs and outputs and outline recommended approaches to iteration when working with a team, and how to update data exports incrementally
 
 ## The RWCDS in Context
 
