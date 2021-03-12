@@ -63,7 +63,7 @@ publishSlug: /tutorials/rhino/module-2
         * NYC Digital Twin
 
           * centralized data model containing everything we know from Open Data and other sources about the current state of the city
-        * UDTools, extends Rhino to do cool stuff related to urban design and zoning
+        * UDTools, extends Rhino to do cool stuff ***(or digitally compute information)*** related to urban design and zoning
 
           * Connect with the Digital Twin, 
           * “Understand” zoning and urban design concepts, 
