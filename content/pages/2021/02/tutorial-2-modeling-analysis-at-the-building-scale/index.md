@@ -124,6 +124,9 @@ Next we have five tabs that deal with different parts of the modeling and analys
     * Map Only - 2d map things only (no 3d buildings or ground)
     * No Topo - 3d buildings but sitting on ground plane
     * All - all 3d geometry plus ground surface
+
+  ![UD_Import Context](screen-shot-2021-03-11-at-9.24.34-pm.png "Importing Context")
+
   * This might take some time but you'll see a bunch of geometry show up in your model after it finishes. After clicking import model, may have to move rhino display to redraw (bug, missing redraw call?)
   * introduce concept of the layer tree
 
