@@ -3,9 +3,9 @@ title: Installing UDTools for Rhino
 summary: How to install UDTools for Rhino
 publishSlug: /rhino/install
 ---
-## Installing UDTools
+## Installing UDTools for Rhino
 
-Before installing, make sure you've updated your copy of Rhino to the latest available version. UDTools is only compatible with Rhino 6.
+Before installing, make sure you've updated your copy of Rhino to the latest available version. UDTools is compatible with Rhino 6 and 7.
 
 ### MacOS
 
