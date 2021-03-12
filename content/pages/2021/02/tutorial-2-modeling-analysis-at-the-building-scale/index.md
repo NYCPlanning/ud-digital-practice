@@ -95,6 +95,10 @@ publishSlug: /tutorials/rhino/module-2
   * Rhino comes with a bunch of graphic interfaces by default, I have mine slightly customized to save on-screen space. The main way most people use Rhino is through a command prompt because it saves time once you learn the commands. You can save even more time by defining and memorizing command shortcuts.
 * Run the command `UDTools` to start, then `UDDashboard` to launch the Dashboard
 
+  ![UD_Dashboard - load](screen-shot-2021-03-11-at-8.17.35-pm.png "UD_Dashboard")
+
+
+
   * this is the UDTools Dashboard, it's the easiest way to interact with UDTools for most tasks. It's built as a webpage and runs in your browser, but it only talks to Rhino and you can pretend like it's part of Rhino for now.
   * the dashboard is like a "remote control" for rhino, it triggers commands and makes changes to your model, reads it and displays information in a more accessible way. here's what you see:
 
