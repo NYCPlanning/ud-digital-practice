@@ -72,20 +72,24 @@ With that in mind, let's turn back to the technical stuff. In the previous tutor
   * layers
 
 
+
 Select the area bounded by Broadway, Prince Street, West Broadway, and Grand Street and run `UDImportModel`.
 
 This time, let's use the "Map Only" option to get just 2D context geometry. You might want the 3D buildings later for visualization, and they can be brought in separately, but since it will make the `UDImportModel` operation take longer to complete we'll skip it for now.
 
+## Saving and Restoring
 
+Once you have your site model imported, save the Rhino file. Note that when you save, the file will include all of the geometry shown in Rhino, including both the base model and any massings on scenario layers. The "smart objects" UDTools needs to work, however, aren't saved and need to be restored every time you reopen Rhino. Running the command `UDRestoreModel` will fetch tax lots and zoning district boundaries from the database to restore.
 
-* Restore a saved model
-* Define custom zoning definitions and boundaries
+Just like before, there's a bit of setup required before you can start massing buildings. Since our sites, scenarios and custom zoning districts are unique to a given project and aren't saved in the file or the database, they need to be defined or restored separately. In the previous tutorial, we saw how to define sites and scenarios one-by-one using `UDAddScenario` and `UDAddSite`. This time we'll see how to define scenarios and sites in bulk from a table, and how to define custom zoning rules to override the built-in defaults.
 
-Just like before, there's a bit of setup required before you can start massing buildings. This time we'll define scenarios and sites in bulk from a table, instead of one-by-one, and we'll also see how to define custom zoning rules to override the built-in defaults.
+Every UDTools release comes with a collection of examples showing how to accomplish various tasks. For neighborhood-scale analysis, look at the contents of `examples/rwcds` to get started.
 
-Every UDTools release comes with a collection of examples showing how to accomplish various tasks. For neighborhood-scale analysis, we can use the contents of `examples/rwcds` to get started. 
+## Setup: Custom Zone Definitions
 
 Both our custom zones and our site/scenario bulk import will be defined as tables in the [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) file format. CSV is an open file format that contains basically the same information as a single sheet in an Excel workbook but without formatting. We use it in UDTools instead of Excel's own .XLSX format because it can be easily read and written by a huge variety of other software – but can still be edited in Excel. Let's open up `zoning.csv` to start defining some custom zones.
+
+## Setup: Defining Sites/Scenarios in Bulk
 
 Next let's look in `sites.csv`. You might recognize the structure of this table from our discussion of dimensionality, on the left we have a list of site 
 
