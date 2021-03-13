@@ -97,21 +97,19 @@ publishSlug: /tutorials/rhino/module-2
 
   ![UD_Dashboard - load](screen-shot-2021-03-11-at-8.17.35-pm.png "UD_Dashboard")
 
-
-
   * this is the UDTools Dashboard, it's the easiest way to interact with UDTools for most tasks. It's built as a webpage and runs in your browser, but it only talks to Rhino and you can pretend like it's part of Rhino for now.
   * the dashboard is like a "remote control" for rhino, it triggers commands and makes changes to your model, reads it and displays information in a more accessible way. here's what you see:
 
     * connection indicator, shows we're hooked up to Rhino, this will turn off if there's a problem. You can click this to reconnect if, for example, you have to restart Rhino.
     * guide link, goes to the Digital Practice docs site for more details
     * instructions toggle, turns the short instructions on or off
-    * report problem link (show how this works)***(get screen shot to attach to email)***
+    * report problem link (show how this works)
     * version indicator, in case you don't have it when communicating about problems
 
 Next we have five tabs that deal with different parts of the modeling and analysis process. Content in the main window changes when you switch tabs.
 
 * we'll walk through them one-by one as we model a single site
-* one last way to interact with Rhino/UDTools is through Grasshopper, a visual programming environment for Rhino. This lets you access and manipulate data in the rhino model directly, and works with a system of components and wires, each component does something with the data and wires move it around from place to place. We'll cover this in more depth in a later tutorial. ***(should i type grasshopper to show the options but not click on any of them?)***
+* one last way to interact with Rhino/UDTools is through Grasshopper, a visual programming environment for Rhino. This lets you access and manipulate data in the rhino model directly, and works with a system of components and wires, each component does something with the data and wires move it around from place to place. We'll cover this in more depth in a later tutorial. 
 
 ## Import a Site Model
 
@@ -157,8 +155,8 @@ Next we have five tabs that deal with different parts of the modeling and analys
     * sites are stored as different geographic locations
   * different ways to set up your file: this session, basic one-by-one commands
 
-    * first, add scenarios (`UDAddScenario`) - takes label only, this can be anything you want
-    * then, add sites (`UDAddSites`)
+    * first, add scenarios (`UDAddScenario`) - takes label only, this can be anything you want ***(no dashes or spaces)***
+    * then, add sites (`UDAddSites`) ***(ex. of site label: A,B,... or 1,2,3,...)***
 
       * has to be done in Rhino, dashboard doesn't provide ability yet
       * sites require ID first
@@ -173,6 +171,8 @@ Next we have five tabs that deal with different parts of the modeling and analys
         * select polyline
         * select front lot lines, side lot lines and rear (explain why, software is able to understand which lot line types to use when you have the context, but can't figure it out when it's an arbitrary geometry)
   * as you add sites and scenarios you can see the list gradually populate to reflect what's in your model. Each new site should also have a blue line around it in the Rhino window with the ID in the middle.
+
+    ![](screen-shot-2021-03-12-at-4.03.37-pm.png "Site Creation")
   * in RWCDS session, will talk about how to define and import sites in bulk
   * will also cover custom zoning overrides
 
@@ -189,7 +189,7 @@ Next we have five tabs that deal with different parts of the modeling and analys
 * To define the massing goals, you'll build up a list starting at the ground floor and working your way up. The definition for the last floor in the list will be repeated until FAR runs out.
 * Define a single floor by filling out the form shown in the row next to "Add Floor". Height is the floor-to-floor height in feet, Use Category is the broad category and Use Group is a specific use group from the Zoning Resolution. "Add Floor" will add the defined floor to the list and you'll see it appear above.
 * Repeat until you have everything defined.
-* Once the massing goals are ready for the whole building, click "Set Massing Goals" and you should see a message in Rhino that they were received.
+* Once the massing goals are ready for the whole building, click "Set Massing Goals" and you should see a message in Rhino that they were received. ***(no massing is appearing at this point)***
 
 Now you're ready to generate a massing. You can either run the entire process at once or step through it gradually and make adjustments as needed. We'll go through step-by-step first then run it all at once so you can see the difference.
 
