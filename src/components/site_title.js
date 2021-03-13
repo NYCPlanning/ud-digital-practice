@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 const SiteTitle = () => {
   return (
@@ -11,7 +12,11 @@ const SiteTitle = () => {
           />
         </div>
         <div>
-          <h1>Urban Design Digital Practice</h1>
+          <Link to='/'>
+            <h1>
+              Urban Design Digital Practice
+            </h1>
+          </Link>
         </div>
     </div>
   )

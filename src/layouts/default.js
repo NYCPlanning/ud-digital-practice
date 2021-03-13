@@ -5,8 +5,8 @@ import SiteTitle from '../components/site_title'
 
 const Layout = ({ children, siteMetadata }) => {
   return(
-    <div id='root' className="grid grid-cols-1 md:grid-cols-4 p-8">
-     <div className='mb-8'>
+    <div id='root' className="grid grid-cols-1 md:grid-cols-4 p-8 z-10">
+     <div className='mb-8 z-10'>
       <Nav siteMetadata={siteMetadata} />
      </div>
      <div id='article-column' className='md:col-start-2 md:col-span-2 w-pro'>
