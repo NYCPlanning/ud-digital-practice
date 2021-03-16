@@ -1,8 +1,12 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
-const SiteTitle = () => {
+const SiteTitle = ({mask}) => {
+  let maskClass = 'gradient-bg-sm'
+  if (mask) maskClass = 'gradient-bg'
+
   return (
-    <div className='gradient-bg fixed bottom-0 left-0 w-full p-4 pt-8 flex space-x-4'>
+    <div className={`${maskClass} fixed bottom-0 left-0 w-full p-4 pt-8 flex space-x-4`}>
         <div>
           <img
             width='72em'
@@ -11,7 +15,9 @@ const SiteTitle = () => {
           />
         </div>
         <div>
-          <h1>Urban Design Digital Practice</h1>
+          <Link to='/'>
+            <h1>Urban Design Digital Practice</h1>
+          </Link>
         </div>
     </div>
   )
