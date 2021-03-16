@@ -19,7 +19,7 @@ export const query = graphql`
 const Page = ({data: { markdownRemark: { html, timeToRead, frontmatter }}}) => {
   // frontmatter: { date, description, title }
   return (
-    <Layout>
+    <Layout mask={true} >
       <div className='col-span-3' dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   )
