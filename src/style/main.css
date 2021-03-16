@@ -123,6 +123,10 @@ ul {
   margin-top: 0em;
 }
 
+video {
+  padding-bottom: 1em;
+}
+
 /* MERMAID DIAGRAMS */
 
 div .mermaid {
