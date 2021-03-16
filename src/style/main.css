@@ -20,6 +20,10 @@
   background: linear-gradient(var(--transparent-white) 0%, var(--white) 25%);
 }
 
+.gradient-bg-sm {
+  background: linear-gradient(var(--transparent-white) 0%, var(--white) 75%);
+}
+
 html {
   font-size: 100%;
 } /*16px*/
