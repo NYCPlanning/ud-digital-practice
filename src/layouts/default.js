@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Nav from '../components/nav'
 import SiteTitle from '../components/site_title'
 
-const Layout = ({ children, siteMetadata }) => {
+const Layout = ({ children, siteMetadata, mask }) => {
   return(
     <div id='root' className="grid grid-cols-1 md:grid-cols-4 p-8">
      <div className='mb-8'>
@@ -13,7 +13,7 @@ const Layout = ({ children, siteMetadata }) => {
       {children}
       <div className='h-16'/>
      </div>
-     <SiteTitle />
+     <SiteTitle mask={mask} />
     </div>
   )
 }
