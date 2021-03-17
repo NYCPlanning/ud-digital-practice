@@ -155,13 +155,13 @@ Next we have five tabs that deal with different parts of the modeling and analys
     * sites are stored as different geographic locations
   * different ways to set up your file: this session, basic one-by-one commands
 
-    * first, add scenarios (`UDAddScenario`) - takes label only, this can be anything you want ***(no dashes or spaces)***
+    * first, add scenarios (`UDAddScenario`) - takes label only, this can be anything you want ***(no dashes or spaces(If you accidently enter a space or dash it will register it)***
     * then, add sites (`UDAddSites`) ***(ex. of site label: A,B,... or 1,2,3,...)***
 
       * has to be done in Rhino, dashboard doesn't provide ability yet
       * sites require ID first
       * then, zoning to use for each label
-      * pick lots from lots layer to use as zoning lot (one or more)
+      * pick lots from lots layer to use as zoning lot (one or more)* **(you can unselect a lot if you mistakenly selected by holding alt and selecting)***
     * alternate version, custom lot
 
       * same as above, except:
@@ -195,8 +195,12 @@ Now you're ready to generate a massing. You can either run the entire process at
 
 In Rhino, run `UDGenerateEnvelope` and a zoning envelope should appear. Notice that it's been placed on an `envelope` sublayer within your current scenario. Select the envelope and Rhino and notice that it's modeled as a *closed solid polysurface*. This is how Rhino understands what we'd call a volume or a solid in plain english.
 
+![](screen-shot-2021-03-17-at-2.36.06-pm.png "UDGenerateEnvelope")
+
 Since zoning is so complicated, it's very likely you won't get a perfect result. So UDTools gives you the ability to modify the zoning envelope when you need to before generating a massing. Think of this as a "tool sharpening" moment, can overcome the shortcomings of the "blunt tool" of built-in zoning with something that makes more sense
     - designer or planner can intervene with information you know that the tool doesn't know
+
+**(test this out with Site A (which doesn't create an accurate envelope) - show Carsten the wonky envelope's that are generated**
 
 Try making a small change to the envelope before moving on to the next step. Some methods to try:
 
@@ -204,11 +208,15 @@ Try making a small change to the envelope before moving on to the next step. Som
 * Draw lines or polylines on the ground plane and use `Slab` or `ExtrudeCrv` (with the `solid` option turned on) to create new closed solid polysurfaces, then `BooleanDifference` with the envelope
 * Extrude a curve vertically to get a cutting surface, then BooleanSplit with the envelope to cut it into parts.
 
-When you're done, just make sure the result is still a closed solid polysurface, and that it's on the envelope sublayer of your current scenario.
+When you're done, just make sure the result is still a closed solid polysurface, and that it's on the envelope sublayer of your current scenario. 
 
 Run `UDGenerateMassing`, using the 'Single' mode, and UDTools will attempt to fill your envelope with floors using all available FAR. You may need to pan the Rhino window before the result appears. Notice that new sublayers for the broad and specific uses of each floor have been created and that each floor is assigned to a specific use group sublayer.
 
+![](screen-shot-2021-03-17-at-2.38.06-pm.png "UDGenerate Massing")
+
 Try `UDGenerateMassing` one more time, this time on a different site without an existing envelope. This time it'll generate an envelope and a massing all in the same step automatically. To start over, simply delete floors and/or envelopes from the model and run the commands again.
+
+![](screen-shot-2021-03-17-at-2.46.18-pm.png)
 
 ## Measure
 
@@ -216,11 +224,19 @@ Finally, let's switch to the Measure panel. Here you'll find information about t
 
 The table at the top shows GFA and ZFA totals for each major use category and the massing overall, and also shows graphically how much of the available FAR is utilized for a particular use. A full bubble means all of the available FAR is in use, while an empty one means none. Bubbles won't appear for uses that aren't allowed under the scenario zoning.
 
+![](screen-shot-2021-03-17-at-3.47.13-pm.png "WOA Measurements")
+
+![](screen-shot-2021-03-17-at-3.47.57-pm.png "WA Measurements")
+
 Lock and turn off the envelope sublayer for the current scenario. Select a few of the floors you modeled in the previous section and delete them. You'll see the numbers and graphic indicators change in the Dashboard. If you need to fine-tune the massing to get right up to the edge of allowable FAR for example, you can use this feature as a guide as you work in Rhino.
 
 Try copying one of the remaining floors upwards a few times, using object snaps to make sure it stays flush with the rest of the massing. At a certain point, you may see indicators turn red in the Dashboard. This means you've modeled something that breaks a rule! UDTools won't stop you from doing this, but it can tell you when there's a problem. Take away a few of the floors and you'll see the FAR indicator turn black again.
 
+![](screen-shot-2021-03-17-at-3.53.23-pm.png "Breaking the set rules")
+
 The Measure panel can also help you model things that aren't yet generated automatically like parking. If you copy your ground floor below grade, and place it on a new scenario sublayer called `parking`, you'll see the area reflected under Provided Area, and an estimate number of spaces will also appear.
+
+![]()
 
 * other things on the page
 
