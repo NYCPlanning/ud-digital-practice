@@ -246,12 +246,12 @@ The Measure panel can also help you model things that aren't yet generated autom
     * unit counts etc. are estimates based on sq. ft. assumptions
   * parking/loading/bike parking
 
-    * number of spaces, approx area required
-* demo how to solve for bike parking
+    * number of spaces, approx. area required
+* demo how to solve for bike parking 
 
-  * won't be modeled automatically, but you can add on a parking layer to see how it will affect the massing
-  * shortcomings will be highlighted in red, once you provide required amount it will go black
+  * won't be modeled automatically, but you can add on a parking layer in Rhino and label it **"*bike parking*"**, then add a mass to the model in that layer to see how it will affect the massing and measurements
+  * shortcomings will be highlighted in red, once you provide the required amount it will go black
 
-The Summary tab shows an overview of IDs, ZFA totals for each major use category and overall, and an estimated residential unit count. Since it shows all sites across the scenario, only the scenario toggle is displayed at the top.
+The Summary tab shows an overview of IDs, ZFA totals for each major use category and overall, and an estimated residential unit count. Since it shows all sites across the scenario, only the scenario toggle is displayed at the top. **(does not show up)**
 
 In the [next tutorial](/tutorials/rhino/module-3) we'll look at some more advanced techniques for modeling, including how to define custom zoning, automate complex site/scenario definitions and generate massings in bulk.
