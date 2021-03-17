@@ -155,14 +155,16 @@ Next we have five tabs that deal with different parts of the modeling and analys
     * sites are stored as different geographic locations
   * different ways to set up your file: this session, basic one-by-one commands
 
-    * first, add scenarios (`UDAddScenario`) - takes label only, this can be anything you want ***(no dashes or spaces(If you accidently enter a space or dash it will register it)***
-    * then, add sites (`UDAddSites`) ***(ex. of site label: A,B,... or 1,2,3,...)***
+    * first, add scenarios (`UDAddScenario`) - takes label only, this can be anything you want ***(no dashes or spaces(If you accidentally enter a space or dash it will register it)(locked) (example: S1)***
+    * then, add sites (`UDAddSites`) ***(ex. of site label: A,B,... or 1,2,3,...)*** 
 
       * has to be done in Rhino, dashboard doesn't provide ability yet
       * sites require ID first
       * then, zoning to use for each label
-      * pick lots from lots layer to use as zoning lot (one or more)* **(you can unselect a lot if you mistakenly selected by holding alt and selecting)***
-    * alternate version, custom lot
+      * pick lots from lots layer to use as zoning lot (one or more)
+
+        * UDRemoveSites allows you to remove if you accidently created the wrong boundary
+    * alternate version, custom lot **(Cut if time consuming)**
 
       * same as above, except:
 
@@ -189,7 +191,7 @@ Next we have five tabs that deal with different parts of the modeling and analys
 * To define the massing goals, you'll build up a list starting at the ground floor and working your way up. The definition for the last floor in the list will be repeated until FAR runs out.
 * Define a single floor by filling out the form shown in the row next to "Add Floor". Height is the floor-to-floor height in feet, Use Category is the broad category and Use Group is a specific use group from the Zoning Resolution. "Add Floor" will add the defined floor to the list and you'll see it appear above.
 * Repeat until you have everything defined.
-* Once the massing goals are ready for the whole building, click "Set Massing Goals" and you should see a message in Rhino that they were received. ***(no massing is appearing at this point)***
+* Once the massing goals are ready for the whole building, click "Set Massing Goals" and you should see a message in Rhino that they were received. 
 
 Now you're ready to generate a massing. You can either run the entire process at once or step through it gradually and make adjustments as needed. We'll go through step-by-step first then run it all at once so you can see the difference.
 
@@ -199,8 +201,6 @@ In Rhino, run `UDGenerateEnvelope` and a zoning envelope should appear. Notice t
 
 Since zoning is so complicated, it's very likely you won't get a perfect result. So UDTools gives you the ability to modify the zoning envelope when you need to before generating a massing. Think of this as a "tool sharpening" moment, can overcome the shortcomings of the "blunt tool" of built-in zoning with something that makes more sense
     - designer or planner can intervene with information you know that the tool doesn't know
-
-**(test this out with Site A (which doesn't create an accurate envelope) - show Carsten the wonky envelope's that are generated**
 
 Try making a small change to the envelope before moving on to the next step. Some methods to try:
 
@@ -215,8 +215,6 @@ Run `UDGenerateMassing`, using the 'Single' mode, and UDTools will attempt to fi
 ![](screen-shot-2021-03-17-at-2.38.06-pm.png "UDGenerate Massing")
 
 Try `UDGenerateMassing` one more time, this time on a different site without an existing envelope. This time it'll generate an envelope and a massing all in the same step automatically. To start over, simply delete floors and/or envelopes from the model and run the commands again.
-
-![](screen-shot-2021-03-17-at-2.46.18-pm.png)
 
 ## Measure
 
@@ -249,9 +247,6 @@ The Measure panel can also help you model things that aren't yet generated autom
     * number of spaces, approx. area required
 * demo how to solve for bike parking 
 
-  * won't be modeled automatically, but you can add on a parking layer in Rhino and label it **"*bike parking*"**, then add a mass to the model in that layer to see how it will affect the massing and measurements
-  * shortcomings will be highlighted in red, once you provide the required amount it will go black
-
-The Summary tab shows an overview of IDs, ZFA totals for each major use category and overall, and an estimated residential unit count. Since it shows all sites across the scenario, only the scenario toggle is displayed at the top. **(does not show up)**
+  * won't be modeled automatically, but you can add on a parking layer in Rhino and label it `bike parking`, then add a mass to the model in that layer to see how it will affect the massing and measurements
 
 In the [next tutorial](/tutorials/rhino/module-3) we'll look at some more advanced techniques for modeling, including how to define custom zoning, automate complex site/scenario definitions and generate massings in bulk.
