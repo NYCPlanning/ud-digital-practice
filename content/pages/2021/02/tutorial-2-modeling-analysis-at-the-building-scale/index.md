@@ -236,14 +236,14 @@ Try copying one of the remaining floors upwards a few times, using object snaps 
 
 The Measure panel can also help you model things that aren't yet generated automatically like parking. If you copy your ground floor below grade, and place it on a new scenario sublayer called `parking`, you'll see the area reflected under Provided Area, and an estimate number of spaces will also appear.
 
-![]()
+![](screen-shot-2021-03-17-at-3.56.42-pm.png "Add Parking + Updated Parking Measurements")
 
 * other things on the page
 
   * dimensions, unit counts
 
-    * not ethat street frontage is for zoning lot not neccessarily massing
-    * unit counts etc are estimates based on sqft assumptions
+    * note that street frontage is for zoning lot, not neccessarily massing
+    * unit counts etc. are estimates based on sq. ft. assumptions
   * parking/loading/bike parking
 
     * number of spaces, approx area required
