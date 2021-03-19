@@ -79,13 +79,12 @@ Have you heard talk of the “magic machine”, the “miracle box” or the “
 
   * designers needed to "manually" (meaning, draw/model in 3d software) mass individual development sites for each of the three analysis conditions
   * then, using measurement tools available in standard modeling software, measure **each individual floor** and enter data into spreadsheets by hand to arrive at sums
-  * The entire urban design staff would sometimes be diverted with these modeling and measurement tasks for full weeks at a time
-  * Would not want to have to do that!
+  * nobody wants to do that!
 * early version of this was developed in late 2018 to automate the process
 
   * basic insight that zoning is "parametric" i.e. the 3d zoning envelope and therefore a RWCDS massing for a given zoning lot can be defined or at least approximated through computational rules
   * this means the desired output of this process is (theoretically) obtainable without a room full of urban designers working on the world's most boring project for two weeks
-  * using a visual programming environment called Grasshopper, which comes bundled with the Rhino 3d modeling software, David and Xun developed w working prototype of what they called the "Parametric Tool"
+  * using a visual programming environment called Grasshopper, which comes bundled with the Rhino 3d modeling software, we developed w working prototype of the "Parametric Tool"
   * developed and tested alongside three neighborhood studies:
 
     * Bushwick
@@ -113,7 +112,7 @@ Have you heard talk of the “magic machine”, the “miracle box” or the “
 * Parts of this had been automated but parts had not
 * In particular, retrieval of latest-available spatial data defining tax lots, surrounding buildings, street widths and other critical elements remained a manual process
 * NYC Digital Twin is a 3d-enabled, fully automated spatial database that can be consumed by different software
-* It lives, as people say, "in the cloud"
+* It lives "in the cloud"
 * Collects multiple Open Data layers in the same place
 * Data from DCP, DOITT, Parks, DOT and others
 * Provides the basis for a more nuanced spatial understanding of zoning
@@ -125,18 +124,17 @@ Have you heard talk of the “magic machine”, the “miracle box” or the “
 
 ### Introduce UDTools for Rhino
 
-* Rhino is the cadillac of 3d modeling software. Across architecture, engineering, manufacturing, shipbuilding and other industries people use it to 
+* Rhino is a high-quality 3d modeling software used across architecture, engineering, manufacturing, shipbuilding and other industries
 * It's accurate, fast, gives a complete set of tools for manipulating different kinds of 3d models, and it's **extensible**
-* UDTools is a custom Rhino plugin I'm developing to enhance its ability to deal with physical planning and zoning concepts
+* UDTools is a Rhino plugin, meant to enhance its ability to deal with physical planning and zoning concepts
 * People do this for lots of other industries, like with manufacturing robots and jewlery
-* Does these things:
+* It:
 * Connects with the Digital Twin to fetch context models of real-world sites
 * Gives Rhino an "understanding" of zoning concepts like the Zoning Lot, rules for height, bulk and use ("Smart Objects") concept?
 * Can use this awareness to
 
   * **Generate** envelopes and massings for proposed developemnts according to zoning assumptions
   * **Measure** and generate quantity take-offs from Rhino models of proposed developments
-* *Brief live demo or brief demoing current capabilities*
 
 ### Future Directions
 
