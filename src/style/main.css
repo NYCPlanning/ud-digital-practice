@@ -20,6 +20,10 @@
   background: linear-gradient(var(--transparent-white) 0%, var(--white) 25%);
 }
 
+.gradient-bg-sm {
+  background: linear-gradient(var(--transparent-white) 0%, var(--white) 75%);
+}
+
 html {
   font-size: 100%;
 } /*16px*/
@@ -117,6 +121,10 @@ ul {
 
 #article-column :nth-child(1) {
   margin-top: 0em;
+}
+
+video {
+  padding-bottom: 1em;
 }
 
 /* MERMAID DIAGRAMS */
