@@ -247,6 +247,6 @@ The Measure panel can also help you model things that aren't yet generated autom
     * number of spaces, approx. area required
 * demo how to solve for bike parking 
 
-  * won't be modeled automatically, but you can add on a parking layer in Rhino and label it `bike parking`, then add a mass to the model in that layer to see how it will affect the massing and measurements
+  * won't be modeled automatically, but you can add on a parking layer in Rhino and label it `bikeparking`, then add a mass to the model in that layer to see how it will affect the massing and measurements
 
 In the [next tutorial](/tutorials/rhino/module-3) we'll look at some more advanced techniques for modeling, including how to define custom zoning, automate complex site/scenario definitions and generate massings in bulk.
