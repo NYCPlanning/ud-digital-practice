@@ -18,13 +18,13 @@ const Nav = () => (
       <h5>NYC Digital Twin</h5>
       <Link activeClassName={'a-active'} to='/digital-twin/about'>About</Link>
     </section>
-    <section className='flex flex-col'>
+    {/* <section className='flex flex-col'>
       <h5>Other Resources</h5>
       <Link activeClassName={'a-active'} to='/collaborate/rwcds-checklist'>RWCDS Checklist</Link>
       <Link activeClassName={'a-active'} to='/collaborate/project-roles'>Project Roles</Link>
       <Link activeClassName={'a-active'} to='/collaborate/submit-an-issue'>Submit an Issue</Link>
       <Link activeClassName={'a-active'} to='/reading-list'>Reading List</Link>
-    </section>
+    </section> */}
   </div>
 )
 
