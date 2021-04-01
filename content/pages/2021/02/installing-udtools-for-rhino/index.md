@@ -30,4 +30,8 @@ Before installing, make sure you've updated your copy of Rhino to the latest ava
 
 Each UDTools release includes example files to help illustrate intended usage for common workflows. We recommend saving these in your user folder or another convenient location of your choice, and replacing the full set whenever you upgrade.
 
+### Updating from Older Releases
+
+If you're attempting to update from an older (pre-1.4) release of UDTools, you may need to manually remove it before a newer version can be used. In Rhino, go to Preferences > Plug-ins and use the search bar to locate any registered plugins named **UDTools** or **DCPTools**. For each one, right-click its entry in the list, select "Open Containing Folder",  and delete the `.rhp` file with the same name. Once these are removed, close Rhino and follow the steps above to install the latest version.
+
 If you're having issues, please contact the Digital Practice Team for help.
