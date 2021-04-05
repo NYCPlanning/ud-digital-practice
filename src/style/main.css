@@ -38,6 +38,17 @@ p, ul, ol {
   margin-bottom: 1.15rem;
 }
 
+/* clear bottom margin on paragraphs and lists 
+that are children of other lists + list items */
+
+li p {
+  margin-bottom: 0;
+}
+
+li ul {
+  margin-bottom: 0;
+}
+
 h1, h2, h3, h4, h5 {
   color: var(--contrast-blue-darkest);
   margin: 2.75rem 0 1.05rem;
