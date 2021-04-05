@@ -1,40 +1,42 @@
 ---
 title: Project Roles
 summary: Overview of project roles
-publishSlug: /collaborate/roles
+publishSlug: /collaborate/rwcds-roles
 ---
-This document outlines responsibilities and expectations for different roles when working with Digital Practice Initiative tools. Typically, there will be four kinds of project participant: a project manager (PM), users, project support and a development lead. The responsibilities of each are as discussed below.
 
-## Project Manager
+This document outlines typical roles, responsibilities and expectations when developing RWCDS documentation with UDTools. Use this as a starting point for a conversation about what to expect when beginning a new project.
 
-- establish a list of project sites and scenarios, including zoning assumptions
-- with the zoning division and other stakeholders, establish codified assumptions for zoning for each site
-- communicate scenario, site and zoning assumptions to users, oversee creation of rhino model
-- supervise data exports and visualization production from model
-- with users and other stakeholders, perform quality control prior to major delivery dates
+## Project Team
 
-## User(s)
+### Project Manager
 
-- with the PM, define and input zoning assumptions
-- with the PM, define sites, scenarios and zoning designations
+- establish a list of sites and scenarios, including general zoning assumptions
+- establish specific zoning rules for each proposed district
+- communicate scenario, site and zoning assumptions to Designer
+- coordinate take-offs (data exports) and model-driven visualizations
+- with designer and other stakeholders, perform quality control on all deliverables prior to major deadlines
+
+### Designer
+
+- with the Project Manager, define and sites, scenarios and zoning districts
+- with the Project Manager, define any custom zoning rules
 - create scenario models in Rhino per project assumptions
-- set up and execute data exports from model
+- configure and run take-offs (exports) from model
 - create visualizations from model
-- consult documentation when needed to obtain information on process/technique
-- submit bug reports and feature requests to the developers [as GitHub issues](/collaborate/issues)
+- consult UDTools documentation when needed to get help, or seek guidance from Project Support Liaison
+- submit bug reports and feature requests to Development Lead as they arise
 
 ## Development Team
 
-### Project Support
+### Project Support Liaison
 
-- brief PM and Users on [required inputs](https://nycplanning.github.io/ud-digital-practice/tutorials/quickstart.html#what-you-need) and roles when beginning new projects
-- consult with PM to identify anticipated nonstandard analysis or visualization work, and communicate needs to development lead if additional tools or features are needed
+- brief Project Manager and Designer on roles and required inputs when beginning new projects
+- consult with Project Manager to identify custom analysis or visualization that may be required, communicate needs to Development Lead
 - provide instruction and other technical assistance as needed, relying on tutorials and documentation wherever possible
-- provide guidance on how to log issues as they arise (see below) and collaborate with the Development Lead to identify temporary workarounds
 
 ### Development Lead
 
-- identify reasonable solutions for nonstandard analysis/visualization needs, implement within available timeframe
-- in extreme circumstances only, provide patches/updates to core tools as the need arises
+- design and implement custom analysis/visualization needs when required
+- fix bugs and implement new features requested by the project team (see below)
 
-The development team is not normally "on call" to fix issues or add features to the core tools as they arise. Any issues, bugs or feature requests **must** be written up as [issues](/collaborate/issues) and will be addressed in future releases on a priority basis.
+⚠️ It's important to stress that the development team won't always be able to fix issues or add new features right away. If you think your project might benefit from something that's not already included with UDTools, please feel free to contact us in advance and we can discuss further.
