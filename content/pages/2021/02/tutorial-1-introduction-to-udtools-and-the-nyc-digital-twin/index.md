@@ -4,157 +4,67 @@ summary: Understand how UDTools and the NYC Digital Twin work together to give
   you urban modeling superpowers!
 publishSlug: /tutorials/rhino/module-1
 ---
-Have you heard talk of the “magic machine”, the “miracle box” or the “parametric tool”? This session will demystify the 3D modeling methods used by the Urban Design Office, introduce the tools we’re developing to enable the use of digital urban models at DCP, and lay the groundwork for two future training sessions covering these tools and methods. 
 
-## Audience
+This is the first tutorial in the UDTools training series. It briefly introduces the Urban Design Digital Practice initiative and how we're working to support fast, easy and contextual 3D modeling for urban design and physical planning through UDTools for Rhino the NYC Digital Twin.
 
-* all agency staff who work on (or are interested in) urban design and physical planning issues
-* staff who work with designers on neighborhood studies-related CEQR analysis, especially the RWCDS
-* staff who may want to collaborate with UD for custom visualization or analysis
-* designers who anticipate using UDTools in their work
-
-## Prerequisites
-
-(None)
+The UDTools tutorial sequence assumes basic familiarity with Rhino. Some familiarity with GIS tools + methods is helpful but not required.
 
 ## Learning Objectives
 
-* Introduce the UD Digital Practice Initiative, its background, and goals 
-* Review historic and contemporary examples of urban models; discuss the value and insights models bring to physical planning and urban design 
-* Introduce the NYC Digital Twin, a centralized outlet for 3D spatial data 
-* Introduce UDTools, which allows Rhino 3D modeling software to: 
+* Discuss physical city models of the past and why they still matter
+* Introduce the UD Digital Practice Initiative, its goals and core products:
+  * the NYC Digital Twin
+  * UDTools for Rhino
+* Show where to find information and extra help
 
-  * Connect with the Digital Twin, 
-  * “Understand” zoning and urban design concepts, 
-  * Generate zoning-compliant massings for real-world or hypothetical sites, 
-  * Produce detailed take-offs of key development scenario metrics. 
-* Introduce the Digital Practice documentation site, where you can find up-to-date tutorials and information about our products
+## Precedents: Physical City Models of the Past
 
-## **Outline**
+Physical models have been part of urban governance for a long time, and continue to play an important role in planning and urban design practice today. As urban designers, we're interested in models for a few different reasons, as illustrated by the following examples.
 
-### Introduce the UD Digital Practice Initiative, its background, and goals
+First, they're a great way to record and store information about places. Before modern topographic mapping techniques became common, governments commissioned large collections of models to accomplish this goal. One example is the collection of French Plans-Reliefs commissioned by Louis XIV that can now be seen at the [Musée des Plans-Reliefs](https://en.wikipedia.org/wiki/Mus%C3%A9e_des_Plans-Reliefs). These were created from surveys, sketches and notes collected in the field and served as a detailed, readily available record of French towns and their surrounding landscapes for military planners.
 
-* DPI introduction
+![](./precedent_plans-reliefs.png)
 
-  * The **Digital Practice Initiative** (DPI) seeks to amplify and enhance the value of urban design and physical planning in NYC, through the development and dissemination of **tools**, **methods** & **data**.
-  * We have a vision for how **models** can help designers and planners be more context-aware, work more effectively, and communicate more vividly.
-  * In this presentation we'll cover the following:
+Second, models can help answer difficult questions. Here in New York, the [Environmental Simulation Center](http://www.simcenter.org/) started out using physical models to research the impacts of policy changes on how the city looks and feels.
 
-    * briefly walk through some ideas about what models can do in a planning agency context
-    * touch on some of the challenges of working with digital models and how I've been working to remove those barriers
-    * give a quick introduction to the two main products we work on, the NYC Digital Twin and UDTools for Rhino
-    * present the UD Digital Practice documentation site, where you can find up-to-date tutorials and information as this project continues to evolve
+![](./precedent_environmental-sim-center.jpg)
 
-### Review historic and contemporary examples of urban models; discuss the value and insights models bring to physical planning and urban design
+Third, they're flexible and can support unintended uses, often years after they're created. The [San Francisco City Model](https://99percentinvisible.org/episode/model-city/), completed in 1940, started as a WPA project intended to help unemployed woodworkers during the Great Depression. Owing partly to its modular block-by-block design, it proved useful throughout the 20th century in illustrating and testing the effects of urban renewal and was frequently used by local planners for shadow studies.
 
-* French Plans-Reliefs
+![](./precedent_sf-model.png)
 
-  * like maps, **models record and store information about places**
-* Environmental Simulation
+Fourth, models are tangible and intuitive to work with for people of all ages and backgrounds. This makes them a powerful tool for public engagement and participatory design and planning. The image below shows a housing design workshop in the 1960s under the supervision of Belgian architect Lucien Kroll.
 
-  * San Francisco City Model
-  * Environmental Simulation Center
-  * **models allow us to experiment and answer questions**
-* Participatory Design
+![](./precedent_kroll-1.png)
 
-  * Lucien Kroll La Mémé
-  * **models are tangible and intuitive**
-* Planning Education/Outreach
+Finally, models can help build consensus and keep people on the same page. This makes them useful for coordinating both professional work (as seen in many architecture offices) and public discussions, like those conducted by the [Center for Urban Pedagogy](http://welcometocup.org/).
 
-  * Center for Urban Pedagogy
-  * **models can help build consensus and keep people on the same page**
-* What makes a digital model different
+![](./precedent_cup.jpg)
 
-  * more powerful
-  * can help evaluate zoning, quantify impacts and coordinate consensus
-  * less intuitive
-  * involves specialized **tools**, used together with the right **methods**, to access and manipulate **data**.
-  * **The overarching goal of this work is to make dealing with digital models as easy as possible.**
+### Urban Design Digital Practice
 
-### Introduce DPI Products
+Today we can use digital tools to do a lot of the same things and more. Digital models let us represent complex spatial relationships in a clean, concise way. They expand on physical models ability to coordinate consensus, allowing us to do this remotely without everyone being "at the table". Information contained in the model can be provided in different forms appropriate to the needs of individual users, on an as-needed basis. And as an added bonus, they're cheap to set up and maintain.
 
-* first, project history:
-* UD has been exploring custom digital modeling tools since mid-2017
-* before that, the definition of a Reasonable Worst Case Development Scenario (RWCDS) for CEQR required an extremely onerous manual process
+Unfortunately, they also have a downside: they're much less intuitive to work with. Working effectively with digital models requires specialized tools, used in conjunction with appropriate methods, to access and manipulate abstract data instead of tangible material.
 
-  * designers needed to "manually" (meaning, draw/model in 3d software) mass individual development sites for each of the three analysis conditions
-  * then, using measurement tools available in standard modeling software, measure **each individual floor** and enter data into spreadsheets by hand to arrive at sums
-  * nobody wants to do that!
-* early version of this was developed in late 2018 to automate the process
+The Urban Design Digital Practice Initiative at NYC Planning aims to make dealing with digital urban models as easy as possible, through the development and dissemination of **data**, **tools** and **methods**. In doing so, we seek to increase the overall quality of urban design and physical planning in NYC, by making it easier to model, visualize and discuss different visions for the city's public spaces.
 
-  * basic insight that zoning is "parametric" i.e. the 3d zoning envelope and therefore a RWCDS massing for a given zoning lot can be defined or at least approximated through computational rules
-  * this means the desired output of this process is (theoretically) obtainable without a room full of urban designers working on the world's most boring project for two weeks
-  * using a visual programming environment called Grasshopper, which comes bundled with the Rhino 3d modeling software, we developed w working prototype of the "Parametric Tool"
-  * developed and tested alongside three neighborhood studies:
+### Data: NYC Digital Twin    
 
-    * Bushwick
-    * North Brooklyn
-    * Bronx Metro-North
-* at the beginning of 2020 the project faced a couple of challenges:
+The [NYC Digital Twin](/digital-twin/about) aggregates various publicly-available spatial datasets into a single 3D-enabled database. Conceptually, it's like a giant digital model of the entire city, with the ability to automatically make copies of specific areas and hand them off to users. It is set up as a web service so it can provide model data to anyone with an internet connection.
 
-  * first, people had started to talk about what else could be possible with tools like this
+For now, it can only be used with UDTools for Rhino, but we're working on a browser-based viewer to provide access to non-specialist users.
 
-    * other parts of CEQR, shadow studies and open space analysis
-    * a kind of "zoning spell check" to pre-screen applicant projects for common problems without wasting staff time
-    * flexible modeling and analysis environment for one-off projects (zoning and urban design)
-  * the prototype tool was built entirely around the multi-site RWCDS use case and couldn't be easily adapted to serve other purposes
-  * second, it was somewhat complicated and required some special knowledge of a visual programming environment called Grasshopper to use.
-  * third, it was implemented in a very "quick and dirty" way, which had allowed a successful initial rollout but posed big problems for maintainability
-  * fourth, it required the user to find and prepare separately (using GIS software) a "context model" to ground the analysis, a process that could take weeks in some cases and led to dozens of duplicate copies of shapefiles and other data being stored in project folders
-* we needed something that was
+### Tools: UDTools for Rhino
 
-  * easier
-  * more contextual
-  * more flexible
+In order to see and interact with models from the NYC Digital Twin, we need special tools. As a first step, we've chosen to develop an add-on (or plugin) for [Rhino](https://www.rhino3d.com/), a 3D CAD software popular with design professionals, that allows users to fetch models of real-world sites across NYC, then quickly model and analyze potential development sites within that context. We call this [UDTools for Rhino](http://localhost:8001/rhino/about). 
 
-### Introduce the NYC Digital Twin, a centralized outlet for 3D spatial data
+UDTools is "aware" of basic zoning concepts and constraints and takes these into account when modeling new sites. Model elements created with UDTools are also aware of their own attributes, and can report back in real time on the floor area, unit counts and parking they represent as adjustments are made.
 
-* Parts of this had been automated but parts had not
-* In particular, retrieval of latest-available spatial data defining tax lots, surrounding buildings, street widths and other critical elements remained a manual process
-* NYC Digital Twin is a 3d-enabled, fully automated spatial database that can be consumed by different software
-* It lives "in the cloud"
-* Collects multiple Open Data layers in the same place
-* Data from DCP, DOITT, Parks, DOT and others
-* Provides the basis for a more nuanced spatial understanding of zoning
-* **DCP is in a singular position to build and maintain this** because it is:
+### Methods: Tutorials and Knowledge-Sharing
 
-  * Specific to NYC
-  * Based on our own data products (MapPLUTO)
-  * Not a "scalable" project
+This project is intended to build on and amplify existing skills and expertise, not replace them. To that end, we're building out a collection of tutorials and other knowledge resources here on this website to help users learn and stay up-to-date on the resources we're developing.
 
-### Introduce UDTools for Rhino
+NYC Planning staff can also access video recordings of training sessions organized as part of the Continuing Education series on [Sharepoint](https://nyco365.sharepoint.com/sites/NYCPLANNING/pdt). Note that specific details in these tutorials are subject to change so it's important to at least cross-reference them with the up-to-date tutorials here.
 
-* Rhino is a high-quality 3d modeling software used across architecture, engineering, manufacturing, shipbuilding and other industries
-* It's accurate, fast, gives a complete set of tools for manipulating different kinds of 3d models, and it's **extensible**
-* UDTools is a Rhino plugin, meant to enhance its ability to deal with physical planning and zoning concepts
-* People do this for lots of other industries, like with manufacturing robots and jewlery
-* It:
-* Connects with the Digital Twin to fetch context models of real-world sites
-* Gives Rhino an "understanding" of zoning concepts like the Zoning Lot, rules for height, bulk and use ("Smart Objects") concept?
-* Can use this awareness to
-
-  * **Generate** envelopes and massings for proposed developemnts according to zoning assumptions
-  * **Measure** and generate quantity take-offs from Rhino models of proposed developments
-
-### Future Directions
-
-* Extended Grasshopper features
-
-  * users can access and manipulate low-level functions w/o need for programming knowledge, useful for custom analysis & environmental simulation
-* Digital engagement deliverables
-* Data science projects and collaborations
-* Zoning Spell-Check functions built into Rhino and/or other software (Revit)
-* NYC Digital Twin viewers for non-designers: web app without Rhino
-* Applicant model pipeline, tools and infrastructure to allow certain kinds of submissions as digital models instead of maps/drawings
-
-### Introduce the DPI Documentation Site (up-to-date tutorials and information)
-
-* If you have Rhino available on your computer and want to get started, you can find pre-recorded version of the second session on the docs site.
-
-  * There will be further Continuing Ed. sessions later in the year to walk thorough these "in person"
-
-    * Session 2 – UDTools basics
-    * Session 3 – Large models, RWCDS
-  * You can always find up-to-date information about what's going on with the DPI via our documentation page:
-
-    * https://ud-digital-practice.netlify.app
+If you still have questions after completing the tutorials and need additional help, contact the UD Digital Practice team.
